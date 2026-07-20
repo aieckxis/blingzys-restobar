@@ -7,13 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (navToggle && navLinks) {
         navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            const isOpen = navLinks.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
 
         // Close nav drawer when link is clicked
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
             });
         });
     }
@@ -120,23 +122,62 @@ function filterCategory(catName, evt) {
 }
 
 // MODAL LOGIC
+let lastFocusedBeforeModal = null;
+
 function openItemModal(name, price, desc, img) {
     document.getElementById('modalTitle').innerText = name;
     document.getElementById('modalPrice').innerText = price;
     document.getElementById('modalDesc').innerText = desc;
     const imgElem = document.getElementById('modalImg');
     imgElem.src = img || fallbackImg;
+    imgElem.alt = name;
     imgElem.onerror = () => { imgElem.src = fallbackImg; };
 
-    document.getElementById('itemModal').classList.add('open');
+    lastFocusedBeforeModal = document.activeElement;
+    const modal = document.getElementById('itemModal');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden'; // lock background scroll
+    document.getElementById('itemModal').querySelector('.close-modal').focus();
+    document.addEventListener('keydown', handleModalKeydown);
 }
 
 function closeModal(e) {
     if (e.target.id === 'itemModal') {
-        document.getElementById('itemModal').classList.remove('open');
+        finishCloseModal();
     }
 }
 
 function closeModalDirect() {
+    finishCloseModal();
+}
+
+function finishCloseModal() {
     document.getElementById('itemModal').classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', handleModalKeydown);
+    if (lastFocusedBeforeModal && typeof lastFocusedBeforeModal.focus === 'function') {
+        lastFocusedBeforeModal.focus();
+    }
+}
+
+function handleModalKeydown(e) {
+    if (e.key === 'Escape') {
+        finishCloseModal();
+        return;
+    }
+    // Simple focus trap: keep Tab cycling within the modal content
+    if (e.key === 'Tab') {
+        const modalContent = document.querySelector('#itemModal .modal-content');
+        const focusable = modalContent.querySelectorAll('button, a[href]');
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
+    }
 }

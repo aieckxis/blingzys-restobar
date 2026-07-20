@@ -4,17 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blingzy's Restobar — The Sundown Bar</title>
+    <title>Blingzy's Restobar — The Sundown Bar | Imus, Cavite</title>
+    <meta name="description"
+        content="Blingzy's Restobar — good food, good music, good vibes in Imus, Cavite. Live bands, DJ sets, crafted cocktails and pulutan favorites, with daily happy hour 6–9PM.">
+    <meta name="theme-color" content="#0a0618">
+    <link rel="canonical" href="https://www.blingzysrestobar.com/">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="restaurant">
+    <meta property="og:site_name" content="Blingzy's Restobar">
+    <meta property="og:title" content="Blingzy's Restobar — The Sundown Bar">
+    <meta property="og:description"
+        content="Good food, good music, good vibes. Live bands, DJ sets, crafted cocktails and pulutan favorites in Imus, Cavite.">
+    <meta property="og:image" content="https://www.blingzysrestobar.com/images/og-cover.jpg">
+    <meta property="og:url" content="https://www.blingzysrestobar.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blingzy's Restobar — The Sundown Bar">
+    <meta name="twitter:description"
+        content="Good food, good music, good vibes. Live bands, DJ sets, crafted cocktails and pulutan favorites in Imus, Cavite.">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0618'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%23e0aa3e'%3EB%3C/text%3E%3C/svg%3E">
+
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured data: local business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BarOrPub",
+        "name": "Blingzy's Restobar",
+        "description": "Good food, good music, good vibes — a restobar in Imus, Cavite with live bands, DJ sets, crafted cocktails and pulutan favorites.",
+        "image": "https://www.blingzysrestobar.com/images/og-cover.jpg",
+        "telephone": "+639270049311",
+        "email": "tinnypootsie@yahoo.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2nd Floor, One Genesis Bldg., Boulevard, Malagasang 1G",
+            "addressLocality": "Imus",
+            "addressRegion": "Cavite",
+            "postalCode": "4103",
+            "addressCountry": "PH"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 14.381306,
+            "longitude": 120.916056
+        },
+        "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Wednesday", "Thursday"], "opens": "17:00", "closes": "01:00" },
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "18:00", "closes": "03:00" }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61561725791782",
+            "https://www.instagram.com/blingzys.restobar"
+        ]
+    }
+    </script>
 </head>
 
 <body>
+
+    <a class="skip-link" href="#drinks">Skip to menu</a>
 
     <!-- STICKY NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="brand-logo">BLINGZY'S</div>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"
+                aria-controls="nav-links">
                 ☰
             </button>
             <ul class="nav-links" id="nav-links">
@@ -68,6 +127,7 @@
             <!-- Box 2: Top Image -->
             <div class="quad-box img-box">
                 <img src="711215669_1500320185441172_1213296101115352271_n.jpg" alt="Blingzy's Ambience"
+                    decoding="async"
                     onerror="this.src='https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80'">
                 <div class="img-overlay-tag">Blingzy's Nightlife</div>
             </div>
@@ -75,7 +135,7 @@
             <!-- Box 3: Bottom Image -->
             <div class="quad-box img-box">
                 <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80"
-                    alt="Bartender & Drinks">
+                    alt="Bartender & Drinks" decoding="async">
                 <div class="img-overlay-tag">Crafted Drinks</div>
             </div>
 
@@ -112,7 +172,7 @@
                 onclick="openItemModal('Creamy Beef Mushroom', '₱399', 'Tender beef slices simmered in rich mushroom cream sauce.', 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80')">
                 <div class="drink-img-wrapper">
                     <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80"
-                        alt="Creamy Beef Mushroom">
+                        alt="Creamy Beef Mushroom" loading="lazy" decoding="async">
                 </div>
                 <div class="drink-info">
                     <h4>Creamy Beef Mushroom</h4>
@@ -125,7 +185,7 @@
                 onclick="openItemModal('Pork Sisig', '₱350', 'Sizzling minced pork, onions, and chili peppers topped with fresh egg.', 'https://images.unsplash.com/photo-1625938145744-e380515399b7?auto=format&fit=crop&w=600&q=80')">
                 <div class="drink-img-wrapper">
                     <img src="https://images.unsplash.com/photo-1625938145744-e380515399b7?auto=format&fit=crop&w=600&q=80"
-                        alt="Pork Sisig">
+                        alt="Pork Sisig" loading="lazy" decoding="async">
                 </div>
                 <div class="drink-info">
                     <h4>Pork Sisig</h4>
@@ -137,7 +197,7 @@
             <div class="drink-card"
                 onclick="openItemModal('Electric Green Sour', '₱250', 'Vibrant apple melon blend topped with cherry & pineapple. (Happy Hour Discount)', 'image_f6843a.jpg')">
                 <div class="drink-img-wrapper">
-                    <img src="image_f6843a.jpg" alt="Electric Green Sour"
+                    <img src="image_f6843a.jpg" alt="Electric Green Sour" loading="lazy" decoding="async"
                         onerror="this.src='https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80'">
                 </div>
                 <div class="drink-info">
@@ -151,7 +211,7 @@
                 onclick="openItemModal('San Mig Light Bucket', '₱480', 'Ice-cold beer bucket (6 bottles). Free Nachos for every 2 buckets!', 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80')">
                 <div class="drink-img-wrapper">
                     <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80"
-                        alt="Beer Bucket">
+                        alt="Beer Bucket" loading="lazy" decoding="async">
                 </div>
                 <div class="drink-info">
                     <h4>San Mig Light Bucket</h4>
@@ -181,10 +241,10 @@
     <section class="video-banner-section" id="events">
         <div class="video-overlay"></div>
         <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1920&q=80"
-            alt="Live Music Background" class="video-bg-img">
+            alt="Live Music Background" class="video-bg-img" loading="lazy" decoding="async">
         <div class="play-btn-wrapper">
-            <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank" class="play-button"
-                title="Watch on Facebook">▶</a>
+            <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank" rel="noopener noreferrer"
+                class="play-button" title="Watch on Facebook">▶</a>
             <p class="video-caption">LIVE BANDS, ACOUSTIC SESSIONS & DJ SETS</p>
         </div>
     </section>
@@ -207,18 +267,22 @@
 
                 <div class="footer-col">
                     <h4>📞 Contact & Socials</h4>
-                    <p><strong>Phone:</strong> 0927 004 9311 / 0935 123 4567</p>
-                    <p><strong>Email:</strong> tinnypootsie@yahoo.com</p>
+                    <p><strong>Phone:</strong> <a href="tel:+639270049311">0927 004 9311</a> / <a
+                            href="tel:+639351234567">0935 123 4567</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:tinnypootsie@yahoo.com">tinnypootsie@yahoo.com</a></p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank">Facebook</a>
+                        <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank"
+                            rel="noopener noreferrer">Facebook</a>
                         <span>•</span>
-                        <a href="https://www.instagram.com/blingzys.restobar" target="_blank">Instagram</a>
+                        <a href="https://www.instagram.com/blingzys.restobar" target="_blank"
+                            rel="noopener noreferrer">Instagram</a>
                     </div>
                 </div>
             </div>
 
             <div class="footer-actions">
-                <a href="https://maps.app.goo.gl/87KRafsDAbSyyffU8" target="_blank" class="btn-gold-fill">📍 Open in
+                <a href="https://maps.app.goo.gl/87KRafsDAbSyyffU8" target="_blank" rel="noopener noreferrer"
+                    class="btn-gold-fill">📍 Open in
                     Google Maps</a>
             </div>
 
@@ -232,9 +296,9 @@
 
     <!-- MODAL LIGHTBOX -->
     <div class="modal" id="itemModal" onclick="closeModal(event)">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModalDirect()">&times;</button>
-            <img id="modalImg" class="modal-img" src="" alt="Dish Image">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="close-modal" onclick="closeModalDirect()" aria-label="Close">&times;</button>
+            <img id="modalImg" class="modal-img" alt="">
             <div class="modal-body">
                 <div class="modal-title-row">
                     <h2 id="modalTitle">Item Name</h2>
