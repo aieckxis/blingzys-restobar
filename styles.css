@@ -623,8 +623,10 @@ button:focus-visible {
 
 .menu-card-img {
     width: 100%;
-    height: 150px;
+    height: 100%;
     object-fit: cover;
+    display: block;
+    border-radius: 0;
 }
 
 .menu-card-content {
@@ -888,7 +890,7 @@ button:focus-visible {
 .menu-card-img-wrapper {
     position: relative;
     width: 100%;
-    height: 150px;
+    height: 180px;
     overflow: hidden;
 }
 
@@ -937,13 +939,13 @@ button:focus-visible {
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.fab-messenger {
+.fab-text {
     bottom: 22px;
-    background: linear-gradient(135deg, #a020f0 0%, #00c6ff 100%);
-    color: #fff;
+    background: linear-gradient(135deg, var(--accent-gold-bright) 0%, var(--accent-gold) 100%);
+    color: var(--bg-dark);
 }
 
-.fab-messenger:hover {
+.fab-text:hover {
     transform: scale(1.08);
 }
 
@@ -981,7 +983,7 @@ button:focus-visible {
         right: 16px;
     }
 
-    .fab-messenger {
+    .fab-text {
         bottom: 16px;
     }
 
@@ -1302,7 +1304,7 @@ footer {
         gap: 12px;
     }
 
-    .menu-card-img {
+    .menu-card-img-wrapper {
         height: 100px;
     }
 
