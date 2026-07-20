@@ -531,7 +531,7 @@ button:focus-visible {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 12px 50px 12px 20px;
+    padding: 12px 20px;
     background: rgba(10, 6, 24, 0.97);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -560,25 +560,27 @@ button:focus-visible {
     padding: 7px 14px;
 }
 
-.sticky-filter-close {
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--border-gold);
+/* Standalone close button — same circular size/style as the other floating
+   action buttons (fab-text, fab-top). Positioned via JS right below the
+   sticky bar (its `top` is set dynamically), so it tracks the bar's actual
+   height instead of guessing a fixed offset. */
+.fab-sticky-close {
+    right: 22px;
+    background: rgba(255, 255, 255, 0.08);
     color: var(--text-light);
-    font-size: 1.05rem;
-    line-height: 1;
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: background 0.2s ease, color 0.2s ease;
+    border: 1px solid var(--border-gold);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
 }
 
-.sticky-filter-close:hover {
+.fab-sticky-close.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.fab-sticky-close:hover {
     background: var(--accent-gold);
     color: var(--bg-dark);
 }
@@ -587,7 +589,7 @@ button:focus-visible {
     .sticky-filter-bar {
         justify-content: flex-start;
         overflow-x: auto;
-        padding: 10px 46px 10px 16px;
+        padding: 10px 16px;
     }
 
     .sticky-filter-buttons {

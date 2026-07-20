@@ -271,12 +271,17 @@
 
             <!-- Sticky clone of the filter bar: appears once the real filter bar
                  scrolls out of view above, so you don't have to scroll back up
-                 to change category. Has its own close (×) button. -->
+                 to change category. -->
             <div class="sticky-filter-bar" id="sticky-filter-bar">
                 <div class="sticky-filter-buttons" id="sticky-filter-buttons"></div>
-                <button type="button" class="sticky-filter-close" id="sticky-filter-close"
-                    aria-label="Hide sticky filter bar">&times;</button>
             </div>
+
+            <!-- Standalone close button (same style/size as the other floating
+                 buttons) — sits just below the sticky bar so it never overlaps
+                 the scrollable category buttons on phone. Only appears while
+                 the sticky bar is showing; closes the whole menu when tapped. -->
+            <button type="button" class="fab fab-sticky-close" id="sticky-filter-close" aria-label="Close menu"
+                title="Close menu">&times;</button>
 
             <div class="menu-cards-grid" id="menu-cards-container"></div>
         </div>

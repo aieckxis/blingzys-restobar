@@ -229,9 +229,9 @@ function toggleFullMenu(forceOpen = false, evt) {
     if (evt) evt.preventDefault();
 
     const wrapper = document.getElementById('full-menu-section');
-    const btn = document.getElementById('toggle-menu-btn');
 
     if (forceOpen || !wrapper.classList.contains('active')) {
+        const btn = document.getElementById('toggle-menu-btn');
         wrapper.classList.add('active');
         btn.innerText = "Hide Menu";
         renderMenuCards('all');
@@ -239,11 +239,22 @@ function toggleFullMenu(forceOpen = false, evt) {
         document.querySelector('.filter-btn').classList.add('active');
         requestAnimationFrame(scrollToFullMenu);
     } else {
-        wrapper.classList.remove('active');
-        btn.innerText = "See Full Menu";
-        const stickyBar = document.getElementById('sticky-filter-bar');
-        if (stickyBar) stickyBar.classList.remove('show');
+        closeFullMenu();
     }
+}
+
+// Collapses the full menu back down. Used both by the "Hide Menu" button and
+// by the sticky filter bar's close button (so you can back out of the menu
+// mid-scroll without having to scroll all the way back up first).
+function closeFullMenu() {
+    const wrapper = document.getElementById('full-menu-section');
+    const btn = document.getElementById('toggle-menu-btn');
+    wrapper.classList.remove('active');
+    btn.innerText = "See Full Menu";
+    const stickyBar = document.getElementById('sticky-filter-bar');
+    if (stickyBar) stickyBar.classList.remove('show');
+    const stickyClose = document.getElementById('sticky-filter-close');
+    if (stickyClose) stickyClose.classList.remove('show');
 }
 
 // Scroll to the full menu section, stopping just below the fixed navbar
@@ -342,7 +353,15 @@ function setupStickyFilterBar() {
         stickyButtonsContainer.appendChild(clone);
     });
 
-    let dismissed = false;
+    // Keeps the standalone close button positioned right below the sticky
+    // bar, however tall the bar happens to be (it can wrap differently at
+    // different widths) — avoids it ever overlapping the category buttons.
+    const positionCloseBtn = () => {
+        if (!stickyCloseBtn) return;
+        const barRect = stickyBar.getBoundingClientRect();
+        stickyCloseBtn.style.top = (barRect.bottom + 10) + 'px';
+    };
+
     const menuSection = document.getElementById('full-menu-section');
 
     const onScroll = () => {
@@ -351,6 +370,7 @@ function setupStickyFilterBar() {
         // "scrolled past".
         if (!menuSection || !menuSection.classList.contains('active')) {
             stickyBar.classList.remove('show');
+            if (stickyCloseBtn) stickyCloseBtn.classList.remove('show');
             return;
         }
 
@@ -358,23 +378,27 @@ function setupStickyFilterBar() {
         const navHeight = navbar ? navbar.offsetHeight : 0;
 
         if (realBarBottom > navHeight) {
-            // Real filter bar is back in view — reset dismissal so the
-            // sticky bar is ready to show again on the next scroll-down.
-            dismissed = false;
+            // Real filter bar is back in view — nothing to show yet.
             stickyBar.classList.remove('show');
-        } else if (!dismissed) {
+            if (stickyCloseBtn) stickyCloseBtn.classList.remove('show');
+        } else {
             stickyBar.classList.add('show');
+            if (stickyCloseBtn) {
+                stickyCloseBtn.classList.add('show');
+                positionCloseBtn();
+            }
         }
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', positionCloseBtn);
     onScroll();
 
+    // Clicking the × closes the whole menu (not just the sticky bar) — lets
+    // you back out from wherever you've scrolled to, without having to
+    // scroll back up to the "Hide Menu" button first.
     if (stickyCloseBtn) {
-        stickyCloseBtn.addEventListener('click', () => {
-            dismissed = true;
-            stickyBar.classList.remove('show');
-        });
+        stickyCloseBtn.addEventListener('click', closeFullMenu);
     }
 }
 
