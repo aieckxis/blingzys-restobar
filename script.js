@@ -1,7 +1,136 @@
 const fallbackImg = 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80';
 
+const fbPageLink = 'https://www.facebook.com/share/17oRUbmkQj/?mibextid=wwXIfr';
+
+// GALLERY ALBUMS
+// NOTE: Most photos/links below are placeholders — swap `img` and `link` per
+// photo with the real picture and the real Facebook post permalink whenever
+// you have them. The "Kuya Bunjeng" tile already points to the real post.
+const albums = [
+    {
+        id: 'birthdays',
+        name: 'Birthdays',
+        cover: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=600&q=80',
+        photos: [
+            { img: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=600&q=80', caption: 'Birthday celebration at Blingzy\'s', link: fbPageLink },
+            { img: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80', caption: 'Cheers to another year', link: fbPageLink }
+        ]
+    },
+    {
+        id: 'live-band',
+        name: 'Live Band Nights',
+        cover: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80',
+        photos: [
+            { img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80', caption: 'Live band set at Blingzy\'s', link: fbPageLink },
+            { img: 'https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=600&q=80', caption: 'Table-side view of the show', link: fbPageLink }
+        ]
+    },
+    {
+        id: 'dj-sets',
+        name: 'DJ Sets',
+        cover: 'https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=600&q=80',
+        photos: [
+            { img: 'https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=600&q=80', caption: 'DJ set at the Sundown Bar', link: fbPageLink },
+            { img: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80', caption: 'Dancefloor cocktails', link: fbPageLink }
+        ]
+    },
+    {
+        id: 'visitors',
+        name: 'Visitors & Creators',
+        cover: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80',
+        photos: [
+            { img: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80', caption: 'Kuya Bunjeng visits Blingzy\'s', link: 'https://www.facebook.com/photo/?fbid=1530222022450988&set=a.381770433962825' },
+            { img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80', caption: 'A regular stopping by', link: fbPageLink }
+        ]
+    },
+    {
+        id: 'food-drinks',
+        name: 'Food & Drinks',
+        cover: 'https://images.unsplash.com/photo-1625938145744-e380515399b7?auto=format&fit=crop&w=600&q=80',
+        photos: [
+            { img: 'https://images.unsplash.com/photo-1625938145744-e380515399b7?auto=format&fit=crop&w=600&q=80', caption: 'Fresh off the kitchen', link: fbPageLink },
+            { img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80', caption: 'Sizzling favorites', link: fbPageLink }
+        ]
+    },
+    {
+        id: 'crowd-vibes',
+        name: 'Crowd & Vibes',
+        cover: 'https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=600&q=80',
+        photos: [
+            { img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=600&q=80', caption: 'Good vibes, good crowd', link: fbPageLink },
+            { img: 'https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=600&q=80', caption: 'Another night at Blingzy\'s', link: fbPageLink }
+        ]
+    }
+];
+
+let activeAlbumId = null;
+
+function renderAlbumGrid() {
+    const grid = document.getElementById('album-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    albums.forEach(album => {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'album-card';
+        card.setAttribute('aria-expanded', 'false');
+        card.innerHTML = `
+      <img src="${album.cover}" alt="${album.name} album cover" loading="lazy" decoding="async"
+        onerror="this.src='${fallbackImg}'">
+      <div class="album-card-overlay">
+        <span class="album-card-name">${album.name}</span>
+        <span class="album-card-count">${album.photos.length} Photos</span>
+      </div>
+    `;
+        card.addEventListener('click', () => openAlbum(album.id));
+        grid.appendChild(card);
+    });
+}
+
+function openAlbum(albumId) {
+    const album = albums.find(a => a.id === albumId);
+    if (!album) return;
+    activeAlbumId = albumId;
+
+    document.getElementById('album-photos-title').textContent = album.name;
+    const photosGrid = document.getElementById('album-photos-grid');
+    photosGrid.innerHTML = '';
+    album.photos.forEach(photo => {
+        const tile = document.createElement('a');
+        tile.className = 'album-photo-tile';
+        tile.href = photo.link;
+        tile.target = '_blank';
+        tile.rel = 'noopener noreferrer';
+        tile.title = photo.caption + ' — view on Facebook';
+        tile.innerHTML = `
+      <img src="${photo.img}" alt="${photo.caption}" loading="lazy" decoding="async"
+        onerror="this.src='${fallbackImg}'">
+      <span class="album-photo-caption">${photo.caption}</span>
+    `;
+        photosGrid.appendChild(tile);
+    });
+
+    document.querySelectorAll('.album-card').forEach((card, i) => {
+        card.setAttribute('aria-expanded', albums[i].id === albumId ? 'true' : 'false');
+    });
+
+    const wrapper = document.getElementById('album-photos-section');
+    wrapper.classList.add('open');
+    wrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function closeAlbumPanel() {
+    activeAlbumId = null;
+    document.getElementById('album-photos-section').classList.remove('open');
+    document.querySelectorAll('.album-card').forEach(card => card.setAttribute('aria-expanded', 'false'));
+}
+
 // MOBILE NAVBAR TOGGLE
 document.addEventListener('DOMContentLoaded', () => {
+    renderAlbumGrid();
+    const albumCloseBtn = document.getElementById('album-close-btn');
+    if (albumCloseBtn) albumCloseBtn.addEventListener('click', closeAlbumPanel);
+
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
 

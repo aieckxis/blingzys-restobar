@@ -438,7 +438,7 @@ button:focus-visible {
 }
 
 .drink-img-wrapper img {
-    max-height: 100%;
+    height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 4px;
@@ -593,20 +593,32 @@ button:focus-visible {
     padding: 0 24px;
 }
 
-.gallery-grid {
+/* --- ALBUM GRID (Gallery) --- */
+.album-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 220px;
+    grid-auto-rows: 200px;
     gap: 14px;
 }
 
-.gallery-item {
+.album-card {
+    position: relative;
     border-radius: 6px;
     overflow: hidden;
     border: 1px solid var(--border-gold);
+    padding: 0;
+    cursor: pointer;
+    background: none;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
 }
 
-.gallery-item img {
+.album-card:hover,
+.album-card[aria-expanded="true"] {
+    border-color: var(--accent-gold);
+}
+
+.album-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -614,8 +626,116 @@ button:focus-visible {
     transition: transform 0.5s ease;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.06);
+.album-card:hover img {
+    transform: scale(1.08);
+}
+
+.album-card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(10, 6, 24, 0.92) 10%, rgba(10, 6, 24, 0.1) 70%);
+    text-align: left;
+}
+
+.album-card-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.album-card-count {
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+}
+
+/* --- EXPANDED ALBUM PHOTOS PANEL --- */
+.album-photos-wrapper {
+    display: none;
+    margin-top: 34px;
+    padding: 24px;
+    background: var(--bg-quad-box);
+    border: 1px solid var(--border-gold);
+    border-radius: 8px;
+    animation: fadeIn 0.4s ease;
+}
+
+.album-photos-wrapper.open {
+    display: block;
+}
+
+.album-photos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.album-photos-header h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--accent-gold);
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+}
+
+.album-close-btn {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-gold);
+    color: var(--text-light);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.album-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.album-photo-tile {
+    position: relative;
+    display: block;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border-gold);
+    height: 200px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.album-photo-tile:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-gold);
+}
+
+.album-photo-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.album-photo-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 12px;
+    background: linear-gradient(to top, rgba(10, 6, 24, 0.95), transparent);
+    color: var(--text-light);
+    font-size: 0.75rem;
+    letter-spacing: 0.3px;
 }
 
 /* --- TESTIMONIALS --- */
@@ -766,7 +886,7 @@ button:focus-visible {
 }
 
 @media (max-width: 800px) {
-    .gallery-grid {
+    .album-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: 180px;
     }
@@ -790,10 +910,18 @@ button:focus-visible {
 }
 
 @media (max-width: 480px) {
-    .gallery-grid {
+    .album-grid {
         grid-template-columns: 1fr;
         grid-auto-rows: 220px;
         gap: 12px;
+    }
+
+    .album-photos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .album-photo-tile {
+        height: 220px;
     }
 }
 
