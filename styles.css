@@ -587,17 +587,20 @@ button:focus-visible {
 
 @media (max-width: 800px) {
     .sticky-filter-bar {
-        justify-content: center;
+        justify-content: flex-start;
+        overflow-x: auto;
         padding: 10px 16px;
+        scroll-behavior: smooth;
     }
 
     .sticky-filter-buttons {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
     }
 
     .sticky-filter-buttons .filter-btn {
         white-space: nowrap;
+        flex-shrink: 0;
     }
 }
 

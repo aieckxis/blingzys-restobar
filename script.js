@@ -332,6 +332,14 @@ function filterCategory(catName, evt) {
     });
     renderMenuCards(catName);
     requestAnimationFrame(scrollToMenuGridTop);
+
+    // If the click came from the sticky bar's horizontally-scrolling strip,
+    // keep the newly active button centered instead of letting it snap to
+    // the edge — otherwise a few taps in a row leave the strip stuck scrolled
+    // far to one side, hiding categories on the other end.
+    if (evt && evt.target && evt.target.closest('#sticky-filter-buttons')) {
+        evt.target.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
 }
 
 // After switching category, jumps back to the top of the results grid.
