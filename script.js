@@ -131,6 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const albumCloseBtn = document.getElementById('album-close-btn');
     if (albumCloseBtn) albumCloseBtn.addEventListener('click', closeAlbumPanel);
 
+    setupStickyFilterBar();
+
     const navToggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
 
@@ -239,6 +241,8 @@ function toggleFullMenu(forceOpen = false, evt) {
     } else {
         wrapper.classList.remove('active');
         btn.innerText = "See Full Menu";
+        const stickyBar = document.getElementById('sticky-filter-bar');
+        if (stickyBar) stickyBar.classList.remove('show');
     }
 }
 
@@ -296,11 +300,82 @@ function renderMenuCards(filter = 'all') {
 
 // FILTER CATEGORY
 function filterCategory(catName, evt) {
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    if (evt && evt.target) {
-        evt.target.classList.add('active');
-    }
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.category === catName);
+    });
     renderMenuCards(catName);
+}
+
+// STICKY FILTER BAR
+// Clones the real filter bar into a fixed bar that appears once the real one
+// scrolls out of view above the viewport, so switching categories mid-scroll
+// doesn't require scrolling all the way back up. Has its own close (×) button;
+// closing it only dismisses the sticky clone until you scroll back up past
+// the real filter bar (at which point it's ready to reappear on the next
+// scroll-down) — the real filter bar itself is never affected.
+function setupStickyFilterBar() {
+    const navbar = document.querySelector('.navbar');
+    const realBar = document.getElementById('filter-bar');
+    const stickyBar = document.getElementById('sticky-filter-bar');
+    const stickyButtonsContainer = document.getElementById('sticky-filter-buttons');
+    const stickyCloseBtn = document.getElementById('sticky-filter-close');
+    if (!realBar || !stickyBar || !stickyButtonsContainer) return;
+
+    // Offset the sticky bar to sit right below the fixed navbar
+    if (navbar) {
+        const setNavHeight = () => {
+            document.documentElement.style.setProperty('--navbar-height', navbar.offsetHeight + 'px');
+        };
+        setNavHeight();
+        window.addEventListener('resize', setNavHeight);
+    }
+
+    // Build the sticky bar's buttons from the real ones
+    stickyButtonsContainer.innerHTML = '';
+    realBar.querySelectorAll('.filter-btn').forEach(realBtn => {
+        const clone = document.createElement('button');
+        clone.type = 'button';
+        clone.className = realBtn.className;
+        clone.dataset.category = realBtn.dataset.category;
+        clone.textContent = realBtn.textContent;
+        clone.addEventListener('click', (e) => filterCategory(realBtn.dataset.category, e));
+        stickyButtonsContainer.appendChild(clone);
+    });
+
+    let dismissed = false;
+    const menuSection = document.getElementById('full-menu-section');
+
+    const onScroll = () => {
+        // Don't do anything while the full menu isn't even open — otherwise
+        // the hidden filter bar's rect collapses to 0 and falsely looks
+        // "scrolled past".
+        if (!menuSection || !menuSection.classList.contains('active')) {
+            stickyBar.classList.remove('show');
+            return;
+        }
+
+        const realBarBottom = realBar.getBoundingClientRect().bottom;
+        const navHeight = navbar ? navbar.offsetHeight : 0;
+
+        if (realBarBottom > navHeight) {
+            // Real filter bar is back in view — reset dismissal so the
+            // sticky bar is ready to show again on the next scroll-down.
+            dismissed = false;
+            stickyBar.classList.remove('show');
+        } else if (!dismissed) {
+            stickyBar.classList.add('show');
+        }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    if (stickyCloseBtn) {
+        stickyCloseBtn.addEventListener('click', () => {
+            dismissed = true;
+            stickyBar.classList.remove('show');
+        });
+    }
 }
 
 // MODAL LOGIC

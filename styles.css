@@ -520,6 +520,87 @@ button:focus-visible {
     font-weight: 600;
 }
 
+/* --- STICKY FILTER BAR (clone shown while scrolling the menu) --- */
+.sticky-filter-bar {
+    position: fixed;
+    top: var(--navbar-height, 78px);
+    left: 0;
+    width: 100%;
+    z-index: 950;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 50px 12px 20px;
+    background: rgba(10, 6, 24, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-gold);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sticky-filter-bar.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.sticky-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 1000px;
+}
+
+.sticky-filter-buttons .filter-btn {
+    font-size: 0.78rem;
+    padding: 7px 14px;
+}
+
+.sticky-filter-close {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-gold);
+    color: var(--text-light);
+    font-size: 1.05rem;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sticky-filter-close:hover {
+    background: var(--accent-gold);
+    color: var(--bg-dark);
+}
+
+@media (max-width: 800px) {
+    .sticky-filter-bar {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 10px 46px 10px 16px;
+    }
+
+    .sticky-filter-buttons {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+
+    .sticky-filter-buttons .filter-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+}
+
 .menu-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));

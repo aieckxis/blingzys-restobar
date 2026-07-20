@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="https://www.blingzysrestobar.com/images/blingzys-cover.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="images/blingzys-logo.png">
+    <link rel="icon" type="image/png" href="images/blingzys-logo.png">
 
     <link rel="stylesheet" href="styles.css">
 
@@ -248,17 +248,34 @@
 
         <!-- EXPANDABLE FULL MENU SECTION -->
         <div class="full-menu-wrapper" id="full-menu-section">
-            <div class="filter-bar">
-                <button class="filter-btn active" onclick="filterCategory('all', event)">All Items</button>
-                <button class="filter-btn" onclick="filterCategory('main-dishes', event)">Main Dishes</button>
-                <button class="filter-btn" onclick="filterCategory('pasta-dishes', event)">Pasta Dishes</button>
-                <button class="filter-btn" onclick="filterCategory('pulutan', event)">Pulutan</button>
-                <button class="filter-btn" onclick="filterCategory('soups', event)">Soups</button>
-                <button class="filter-btn" onclick="filterCategory('sandwiches', event)">Sandwiches</button>
-                <button class="filter-btn" onclick="filterCategory('rice', event)">Rice</button>
-                <button class="filter-btn" onclick="filterCategory('desserts', event)">Desserts</button>
-                <button class="filter-btn" onclick="filterCategory('drinks', event)">Drinks</button>
-                <button class="filter-btn" onclick="filterCategory('cocktails', event)">Cocktails</button>
+            <div class="filter-bar" id="filter-bar">
+                <button class="filter-btn active" data-category="all" onclick="filterCategory('all', event)">All
+                    Items</button>
+                <button class="filter-btn" data-category="main-dishes"
+                    onclick="filterCategory('main-dishes', event)">Main Dishes</button>
+                <button class="filter-btn" data-category="pasta-dishes"
+                    onclick="filterCategory('pasta-dishes', event)">Pasta Dishes</button>
+                <button class="filter-btn" data-category="pulutan"
+                    onclick="filterCategory('pulutan', event)">Pulutan</button>
+                <button class="filter-btn" data-category="soups" onclick="filterCategory('soups', event)">Soups</button>
+                <button class="filter-btn" data-category="sandwiches"
+                    onclick="filterCategory('sandwiches', event)">Sandwiches</button>
+                <button class="filter-btn" data-category="rice" onclick="filterCategory('rice', event)">Rice</button>
+                <button class="filter-btn" data-category="desserts"
+                    onclick="filterCategory('desserts', event)">Desserts</button>
+                <button class="filter-btn" data-category="drinks"
+                    onclick="filterCategory('drinks', event)">Drinks</button>
+                <button class="filter-btn" data-category="cocktails"
+                    onclick="filterCategory('cocktails', event)">Cocktails</button>
+            </div>
+
+            <!-- Sticky clone of the filter bar: appears once the real filter bar
+                 scrolls out of view above, so you don't have to scroll back up
+                 to change category. Has its own close (×) button. -->
+            <div class="sticky-filter-bar" id="sticky-filter-bar">
+                <div class="sticky-filter-buttons" id="sticky-filter-buttons"></div>
+                <button type="button" class="sticky-filter-close" id="sticky-filter-close"
+                    aria-label="Hide sticky filter bar">&times;</button>
             </div>
 
             <div class="menu-cards-grid" id="menu-cards-container"></div>
@@ -336,8 +353,8 @@
                 <div class="footer-col">
                     <h4>📞 Contact & Socials</h4>
                     <p><strong>Phone:</strong> <a href="tel:+639270049311">0927 004 9311</a> / <a
-                            href="tel:+639351234567">0935 123 4567</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:tinnypootsie@yahoo.com">tinnypootsie@yahoo.com</a></p>
+                            <p><strong>Email:</strong> <a
+                                href="mailto:tinnypootsie@yahoo.com">tinnypootsie@yahoo.com</a></p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/share/17oRUbmkQj/?mibextid=wwXIfr" target="_blank"
                             rel="noopener noreferrer">Facebook</a>
