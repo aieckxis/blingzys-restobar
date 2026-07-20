@@ -17,20 +17,20 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#drinks">Drinks & Menu</a></li>
-                <li><a href="#events">Events</a></li>
+                <li><a href="#drinks">Menu & Drinks</a></li>
+                <li><a href="#events">Vibes</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO SECTION WITH SCRIPT TITLE -->
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-script-title">The Sundown Bar</h1>
-            <p class="hero-subtitle">FOR LONG EVENINGS & GOOD VIBES</p>
-            <a href="#drinks" class="btn-gold-fill" onclick="toggleFullMenu(true)">Read More</a>
+            <p class="hero-subtitle">"GOOD FOOD — GOOD MUSIC — GOOD VIBES"</p>
+            <a href="#drinks" class="btn-gold-fill" onclick="toggleFullMenu(true)">Explore Menu</a>
         </div>
     </section>
 
@@ -44,11 +44,11 @@
                 <div class="schedule-list">
                     <div class="sched-item">
                         <span class="day-label">WEEKDAYS (MON, WED, THU)</span>
-                        <span class="time-label">5:00 PM - 1:00 AM</span>
+                        <span class="time-label">5:00 PM – 1:00 AM</span>
                     </div>
                     <div class="sched-item">
                         <span class="day-label">WEEKENDS (FRI, SAT, SUN)</span>
-                        <span class="time-label">6:00 PM - 3:00 AM</span>
+                        <span class="time-label">6:00 PM – 3:00 AM</span>
                     </div>
                     <div class="sched-item">
                         <span class="day-label">TUESDAY</span>
@@ -59,14 +59,14 @@
 
             <!-- Box 2: Top Image -->
             <div class="quad-box img-box">
-                <img src="711215669_1500320185441172_1213296101115352271_n.jpg" alt="Blingzy's Night Ambience"
+                <img src="711215669_1500320185441172_1213296101115352271_n.jpg" alt="Blingzy's Ambience"
                     onerror="this.src='https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80'">
             </div>
 
             <!-- Box 3: Bottom Image -->
             <div class="quad-box img-box">
                 <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80"
-                    alt="Bartender Crafting Drink">
+                    alt="Bartender & Drinks">
             </div>
 
             <!-- Box 4: Happy Hour Promo -->
@@ -74,7 +74,7 @@
                 <h3 class="box-title">Happy Hours</h3>
                 <p class="promo-days">DAILY SPECIAL PROMO</p>
                 <div class="gold-divider"></div>
-                <p class="promo-time">6:00 PM - 9:00 PM</p>
+                <p class="promo-time">6:00 PM – 9:00 PM</p>
                 <span class="promo-badge">DISCOUNTED COCKTAILS</span>
                 <p class="promo-subtext">*Free Nachos for every 2 beer buckets ordered!</p>
             </div>
@@ -86,31 +86,44 @@
     <section class="products-section" id="drinks">
         <div class="section-header-row">
             <div class="header-text-group">
-                <h2 class="section-heading">Our Drinks & Specials</h2>
-                <p class="section-subtext">Handcrafted cocktails, ice-cold beer buckets, and savory Filipino pulutan
-                    paired with live music.</p>
+                <h2 class="section-heading">Featured Drinks & Dishes</h2>
+                <p class="section-subtext">Click any item below to view full details or explore our complete interactive
+                    menu.</p>
             </div>
-            <button class="btn-gold-outline" id="toggle-menu-btn" onclick="toggleFullMenu()">See More</button>
+            <button class="btn-gold-outline" id="toggle-menu-btn" onclick="toggleFullMenu()">See Full Menu</button>
         </div>
 
-        <!-- CAROUSEL / ROW OF CARDS -->
+        <!-- FEATURED CARDS ROW -->
         <div class="drinks-row">
 
             <div class="drink-card"
-                onclick="openItemModal('Blue Lagoon Cocktail', '₱250', 'Refreshing blue curaçao cocktail with citrus garnish.', 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80')">
+                onclick="openItemModal('Creamy Beef Mushroom', '₱399', 'Tender beef slices simmered in rich mushroom cream sauce.', 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80')">
                 <div class="drink-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
-                        alt="Blue Lagoon">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80"
+                        alt="Creamy Beef Mushroom">
                 </div>
                 <div class="drink-info">
-                    <h4>Blue Lagoon</h4>
-                    <p class="drink-price"><del>₱280</del> ₱250</p>
+                    <h4>Creamy Beef Mushroom</h4>
+                    <p class="drink-price">₱399</p>
                     <div class="stars">★★★★★</div>
                 </div>
             </div>
 
             <div class="drink-card"
-                onclick="openItemModal('Electric Green Sour', '₱250', 'Vibrant apple melon blend topped with cherry & pineapple.', 'image_f6843a.jpg')">
+                onclick="openItemModal('Pork Sisig', '₱350', 'Sizzling minced pork, onions, and chili peppers topped with fresh egg.', 'https://images.unsplash.com/photo-1625938145744-e380515399b7?auto=format&fit=crop&w=600&q=80')">
+                <div class="drink-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1625938145744-e380515399b7?auto=format&fit=crop&w=600&q=80"
+                        alt="Pork Sisig">
+                </div>
+                <div class="drink-info">
+                    <h4>Pork Sisig</h4>
+                    <p class="drink-price">₱350</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+
+            <div class="drink-card"
+                onclick="openItemModal('Electric Green Sour', '₱250', 'Vibrant apple melon blend topped with cherry & pineapple. (Happy Hour Discount)', 'image_f6843a.jpg')">
                 <div class="drink-img-wrapper">
                     <img src="image_f6843a.jpg" alt="Electric Green Sour"
                         onerror="this.src='https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80'">
@@ -123,7 +136,7 @@
             </div>
 
             <div class="drink-card"
-                onclick="openItemModal('San Mig Light Bucket', '₱480', 'Ice-cold beer bucket (6 bottles). Free Nachos with 2 buckets!', 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80')">
+                onclick="openItemModal('San Mig Light Bucket', '₱480', 'Ice-cold beer bucket (6 bottles). Get free Nachos with 2 buckets!', 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80')">
                 <div class="drink-img-wrapper">
                     <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80"
                         alt="Beer Bucket">
@@ -131,19 +144,6 @@
                 <div class="drink-info">
                     <h4>San Mig Light Bucket</h4>
                     <p class="drink-price">₱480</p>
-                    <div class="stars">★★★★★</div>
-                </div>
-            </div>
-
-            <div class="drink-card"
-                onclick="openItemModal('Sunset Tropical Punch', '₱240', 'Sweet citrus and rum blend.', 'https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80')">
-                <div class="drink-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80"
-                        alt="Sunset Punch">
-                </div>
-                <div class="drink-info">
-                    <h4>Sunset Tropical Punch</h4>
-                    <p class="drink-price"><del>₱270</del> ₱240</p>
                     <div class="stars">★★★★★</div>
                 </div>
             </div>
@@ -171,24 +171,24 @@
         <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1920&q=80"
             alt="Live Music Background" class="video-bg-img">
         <div class="play-btn-wrapper">
-            <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank" class="play-button">
-                ▶
-            </a>
-            <p class="video-caption">CATCH OUR LIVE BAND & DJ SETS</p>
+            <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank" class="play-button">▶</a>
+            <p class="video-caption">LIVE BANDS, ACOUSTIC SESSIONS & DJ SETS</p>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER & COMPLETE LOCATION INFO -->
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-brand">BLINGZY'S RESTOBAR</div>
-            <p class="footer-address">2nd Floor, One Genesis Bldg., Boulevard, Malagasang 1G, Imus, Philippines, 4103
-            </p>
-            <p class="footer-landmark">Landmark: Beside Ningnangan Imus / 711 New Cockpit Arena</p>
+            <p class="footer-tagline">"The Sundown Bar"</p>
 
-            <div class="footer-contact-info">
-                <span>📞 0927 004 9311 / 0935 123 4567</span>
-                <span>✉️ tinnypootsie@yahoo.com</span>
+            <div class="footer-details">
+                <p><strong>📍 Address:</strong> 2nd Floor, One Genesis Bldg., Boulevard, Malagasang 1G, Imus,
+                    Philippines, 4103</p>
+                <p><strong>📍 Coordinates:</strong> 14°22'52.7"N 120°54'57.8"E</p>
+                <p><strong>📍 Landmark:</strong> Beside Ningnangan Imus / 711 New Cockpit Arena</p>
+                <p><strong>📞 Contact:</strong> 0927 004 9311 / 0935 123 4567</p>
+                <p><strong>✉️ Email:</strong> tinnypootsie@yahoo.com</p>
             </div>
 
             <div class="footer-actions">
@@ -196,11 +196,13 @@
                     Google Maps</a>
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank">Facebook</a>
+                    <span>|</span>
                     <a href="https://www.instagram.com/blingzys.restobar" target="_blank">Instagram</a>
                 </div>
             </div>
 
-            <p class="copyright">&copy; 2026 Blingzy's Restobar. All Rights Reserved. (7% Service charge applies)</p>
+            <p class="service-notice">ℹ️ Please note: We have a service charge of 7% of your entire bill.</p>
+            <p class="copyright">&copy; 2026 Blingzy's Restobar. All Rights Reserved.</p>
         </div>
     </footer>
 

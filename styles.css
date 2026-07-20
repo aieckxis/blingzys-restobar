@@ -338,7 +338,8 @@ a {
 .drink-img-wrapper img {
     max-height: 100%;
     max-width: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 6px;
     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
 }
 
@@ -413,6 +414,11 @@ a {
     border: 1px solid var(--border-gold);
     overflow: hidden;
     cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.menu-card-item:hover {
+    border-color: var(--accent-gold);
 }
 
 .menu-card-img {
@@ -429,6 +435,7 @@ a {
     display: flex;
     justify-content: space-between;
     margin-bottom: 4px;
+    gap: 10px;
 }
 
 .menu-card-title {
@@ -439,6 +446,7 @@ a {
 .menu-card-price {
     color: var(--accent-gold);
     font-family: 'Cinzel', serif;
+    white-space: nowrap;
 }
 
 .menu-card-desc {
@@ -518,30 +526,22 @@ footer {
 
 .footer-brand {
     font-family: 'Cinzel', serif;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: var(--accent-gold);
-    margin-bottom: 10px;
+    margin-bottom: 4px;
 }
 
-.footer-address {
+.footer-tagline {
+    font-style: italic;
+    color: var(--accent-peach);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.footer-details p {
     font-size: 0.88rem;
     color: var(--text-light);
-}
-
-.footer-landmark {
-    font-size: 0.8rem;
-    color: var(--accent-peach);
-    margin-top: 4px;
-}
-
-.footer-contact-info {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin: 20px 0;
-    flex-wrap: wrap;
+    margin-bottom: 6px;
 }
 
 .footer-actions {
@@ -549,15 +549,21 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin-bottom: 30px;
+    margin: 25px 0;
     flex-wrap: wrap;
 }
 
 .social-links {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     font-size: 0.85rem;
     color: var(--accent-gold);
+}
+
+.service-notice {
+    font-size: 0.8rem;
+    color: var(--accent-peach);
+    margin-bottom: 12px;
 }
 
 .copyright {

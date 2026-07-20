@@ -1,6 +1,6 @@
 const fallbackImg = 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80';
 
-// COMPLETE DATASET WITH DISH/DRINK PHOTOS
+// COMPLETE BLINGZY'S RESTOBAR MENU DATASET
 const menuItems = [
     // Mains & Pulutan
     { category: 'mains', name: 'Creamy Beef Mushroom', price: '₱399', desc: 'Tender beef slices simmered in rich mushroom cream sauce.', img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80' },
@@ -41,10 +41,10 @@ const menuItems = [
     { category: 'sandwiches-desserts', name: 'Plain Rice', price: '₱35', desc: 'Steamed white rice.', img: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=600&q=80' },
 
     // Drinks & Cocktails
-    { category: 'drinks', name: 'Blue Lagoon Cocktail', price: '₱250', desc: 'Refreshing blue curaçao cocktail with citrus garnish. (Discounted during Happy Hour 6-9 PM)', img: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80' },
-    { category: 'drinks', name: 'Electric Green Sour', price: '₱250', desc: 'Vibrant apple melon blend topped with cherry & pineapple. (Discounted during Happy Hour 6-9 PM)', img: 'image_f6843a.jpg' },
-    { category: 'drinks', name: 'Sunset Tropical Punch', price: '₱240', desc: 'Sweet citrus and rum blend. (Discounted during Happy Hour 6-9 PM)', img: 'https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80' },
-    { category: 'drinks', name: 'San Mig Light Bucket', price: '₱480', desc: 'Ice-cold beer bucket (6 bottles). Get free Nachos with 2 buckets!', img: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80' }
+    { category: 'drinks', name: 'Blue Lagoon Cocktail', price: '₱250', desc: 'Refreshing blue curaçao cocktail with citrus garnish. (Happy Hour Discount)', img: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80' },
+    { category: 'drinks', name: 'Electric Green Sour', price: '₱250', desc: 'Vibrant apple melon blend topped with cherry & pineapple. (Happy Hour Discount)', img: 'image_f6843a.jpg' },
+    { category: 'drinks', name: 'Sunset Tropical Punch', price: '₱240', desc: 'Sweet citrus and rum blend. (Happy Hour Discount)', img: 'https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80' },
+    { category: 'drinks', name: 'San Mig Light Bucket', price: '₱480', desc: 'Ice-cold beer bucket (6 bottles). Free Nachos for every 2 buckets!', img: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80' }
 ];
 
 // TOGGLE FULL MENU
@@ -61,7 +61,7 @@ function toggleFullMenu(forceOpen = false) {
         }
     } else {
         wrapper.classList.remove('active');
-        btn.innerText = "See More";
+        btn.innerText = "See Full Menu";
     }
 }
 
