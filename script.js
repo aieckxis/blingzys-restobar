@@ -187,29 +187,37 @@ const menuItems = [
     { category: 'pulutan', name: 'Onion Rings', price: '₱220', desc: 'Batter-dipped fried onion rings with dipping sauce.', img: 'https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=600&q=80' },
     { category: 'pulutan', name: 'Ensaladang Labanos', price: '₱170', desc: 'Pickled radish salad with onions and vinegar dressing.', img: 'https://www.angsarap.net/wp-content/uploads/2017/07/Ensaladang-Labanos-with-Alamang.jpg' },
 
-    // Soups & Pasta
-    { category: 'soups-pasta', name: 'Sinigang na Hipon', price: '₱450', desc: 'Tamarind sour soup with fresh shrimp and garden vegetables.', img: 'https://i.ytimg.com/vi/Mh7wIz0KlFE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA0IHEjKMtkISxyUZkRJX9NHyGyhg' },
-    { category: 'soups-pasta', name: 'Sinigang na Baboy', price: '₱399', desc: 'Classic sour tamarind broth with tender pork ribs.', img: 'https://assets.sbs.com.au/dims4/default/573f28f/2147483647/strip/true/crop/1000x563+0+385/resize/1280x720!/quality/90/?url=https%3A%2F%2Fsbs-au-brightspot.s3.ap-southeast-2.amazonaws.com%2Fdrupal%2Ffood%2Fpublic%2F7I_soups_sinigang_baboy_0.jpg' },
-    { category: 'soups-pasta', name: 'Sinigang na Bagnet', price: '₱399', desc: 'Tangy tamarind broth paired with crispy pork bagnet.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeNncHOojcSMrEKzUVifYHIiBnJaqV_73NEqaQM7mSQ70lJi605KCAfcA&s=10' },
-    { category: 'soups-pasta', name: 'Carbonara', price: '₱390', desc: 'Classic Italian pasta with creamy sauce, parmesan, and crisp bacon.', img: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=600&q=80' },
-    { category: 'soups-pasta', name: 'Scampi Shrimp Pasta', price: '₱390', desc: 'Garlic butter shrimp tossed with pasta and fine herbs.', img: 'https://www.allrecipes.com/thmb/_C15iXp1hHyIx4SPC_5y3OXqXFo=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/229960-shrimp-scampi-with-pasta-DDMFS-4x3-e065ddef4e6d44479d37b4523808cc23.jpg' },
-    { category: 'soups-pasta', name: 'Baked Mac', price: '₱295', desc: 'Baked macaroni in tomato-based meat sauce topped with triple cheese.', img: 'https://www.nestlegoodnes.com/ph/sites/default/files/styles/1_1_768px_width/public/srh_recipes/89c69f2511cdead9de76388ddd734e8c.jpg.webp?itok=Hzc50YOl' },
-    { category: 'soups-pasta', name: 'Fettuccine', price: '₱295', desc: 'Fettuccine pasta in rich white cream sauce topped with tuna flakes.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwlDmLcYoHJFeqHGLPtg0-U8LeLkKGG-j8HtjC7bqLRF2lcOe8z5jaGuo&s=10' },
+    // Soups
+    { category: 'soups', name: 'Sinigang na Hipon', price: '₱450', desc: 'Tamarind sour soup with fresh shrimp and garden vegetables.', img: 'https://i.ytimg.com/vi/Mh7wIz0KlFE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA0IHEjKMtkISxyUZkRJX9NHyGyhg' },
+    { category: 'soups', name: 'Sinigang na Baboy', price: '₱399', desc: 'Classic sour tamarind broth with tender pork ribs.', img: 'https://assets.sbs.com.au/dims4/default/573f28f/2147483647/strip/true/crop/1000x563+0+385/resize/1280x720!/quality/90/?url=https%3A%2F%2Fsbs-au-brightspot.s3.ap-southeast-2.amazonaws.com%2Fdrupal%2Ffood%2Fpublic%2F7I_soups_sinigang_baboy_0.jpg' },
+    { category: 'soups', name: 'Sinigang na Bagnet', price: '₱399', desc: 'Tangy tamarind broth paired with crispy pork bagnet.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeNncHOojcSMrEKzUVifYHIiBnJaqV_73NEqaQM7mSQ70lJi605KCAfcA&s=10' },
 
-    // Sandwiches & Desserts
-    { category: 'sandwiches-desserts', name: 'Club House Sandwich', price: '₱320', desc: 'Triple decker with chicken, bacon, egg, lettuce, tomato, and mayo.', img: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80' },
-    { category: 'sandwiches-desserts', name: 'Apple Pie', price: '₱420', desc: 'Freshly baked apple pie. (Pre-order only - 1 day lead time)', img: 'https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?auto=format&fit=crop&w=600&q=80' },
-    { category: 'sandwiches-desserts', name: 'Cheesecake Slice', price: '₱220', desc: 'Creamy New York-style cheesecake slice.', img: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80' },
-    { category: 'sandwiches-desserts', name: 'Parfait', price: '₱150', desc: 'Layered dessert with cream, fruit, and sweet crunch.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm9DhBshW-aV_rOEGOlYIevj439xP2TJJtey1VL4jp0l6e-zTLrIXX_R8&s=10' },
-    { category: 'sandwiches-desserts', name: 'Yang Chao Rice', price: '₱110', desc: 'Fried rice loaded with veggies, egg, and savory bits.', img: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80' },
-    { category: 'sandwiches-desserts', name: 'Pilaf Rice', price: '₱110', desc: 'Seasoned rice cooked in aromatic broth and spices.', img: 'https://www.allrecipes.com/thmb/ohqQTWBnC0VwlTxxb_E4-H5pCWk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/203951-Sarahs-rice-pilaf-Beauty-3x4_38497-f2f18ff1bcc04abcac58ccbd8c6a17c9.jpg' },
-    { category: 'sandwiches-desserts', name: 'Plain Rice', price: '₱35', desc: 'Steamed white rice.', img: 'https://ruhskitchen.com/wp-content/uploads/2024/09/istockphoto-491090528-612x612-1.jpg' },
+    // Pasta Dishes
+    { category: 'pasta-dishes', name: 'Carbonara', price: '₱390', desc: 'Classic Italian pasta with creamy sauce, parmesan, and crisp bacon.', img: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=600&q=80' },
+    { category: 'pasta-dishes', name: 'Scampi Shrimp Pasta', price: '₱390', desc: 'Garlic butter shrimp tossed with pasta and fine herbs.', img: 'https://www.allrecipes.com/thmb/_C15iXp1hHyIx4SPC_5y3OXqXFo=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/229960-shrimp-scampi-with-pasta-DDMFS-4x3-e065ddef4e6d44479d37b4523808cc23.jpg' },
+    { category: 'pasta-dishes', name: 'Baked Mac', price: '₱295', desc: 'Baked macaroni in tomato-based meat sauce topped with triple cheese.', img: 'https://www.nestlegoodnes.com/ph/sites/default/files/styles/1_1_768px_width/public/srh_recipes/89c69f2511cdead9de76388ddd734e8c.jpg.webp?itok=Hzc50YOl' },
+    { category: 'pasta-dishes', name: 'Fettuccine', price: '₱295', desc: 'Fettuccine pasta in rich white cream sauce topped with tuna flakes.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwlDmLcYoHJFeqHGLPtg0-U8LeLkKGG-j8HtjC7bqLRF2lcOe8z5jaGuo&s=10' },
 
-    // Drinks & Cocktails
-    { category: 'drinks', name: 'Blue Lagoon Cocktail', price: '₱250', desc: 'Refreshing blue curaçao cocktail with citrus garnish. (Happy Hour Discount)', img: 'https://bols.com/cdn/shop/files/Blue-Curacao-Spritz-Cocktail-Bols-Blue-Curacao-Liqueur.jpg?v=1779200470&width=1920' },
-    { category: 'drinks', name: 'Electric Green Sour', price: '₱250', desc: 'Vibrant apple melon blend topped with cherry & pineapple. (Happy Hour Discount)', img: 'https://3catsfoodie.com/wp-content/uploads/2026/01/IMG_5051.jpg' },
-    { category: 'drinks', name: 'Sunset Tropical Punch', price: '₱240', desc: 'Sweet citrus and rum blend. (Happy Hour Discount)', img: 'https://brickellmag.com/wp-content/uploads/2019/06/1561588087-74249639220c75ac3549dcc4b1368930-683x1024.jpg' },
-    { category: 'drinks', name: 'San Mig Light Bucket', price: '₱480', desc: 'Ice-cold beer bucket (6 bottles). Free Nachos for every 2 buckets!', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAP7xdI--Q69o8rUL7J-hY_20rMEXJB51xZK2BEMHg6VjrkV8tPlFPq6ce&s=10' }
+    // Sandwiches
+    { category: 'sandwiches', name: 'Club House Sandwich', price: '₱320', desc: 'Triple decker with chicken, bacon, egg, lettuce, tomato, and mayo.', img: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80' },
+
+    // Rice
+    { category: 'rice', name: 'Yang Chao Rice', price: '₱110', desc: 'Fried rice loaded with veggies, egg, and savory bits.', img: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=600&q=80' },
+    { category: 'rice', name: 'Pilaf Rice', price: '₱110', desc: 'Seasoned rice cooked in aromatic broth and spices.', img: 'https://www.allrecipes.com/thmb/ohqQTWBnC0VwlTxxb_E4-H5pCWk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/203951-Sarahs-rice-pilaf-Beauty-3x4_38497-f2f18ff1bcc04abcac58ccbd8c6a17c9.jpg' },
+    { category: 'rice', name: 'Plain Rice', price: '₱35', desc: 'Steamed white rice.', img: 'https://ruhskitchen.com/wp-content/uploads/2024/09/istockphoto-491090528-612x612-1.jpg' },
+
+    // Desserts
+    { category: 'desserts', name: 'Apple Pie', price: '₱420', desc: 'Freshly baked apple pie. (Pre-order only - 1 day lead time)', img: 'https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?auto=format&fit=crop&w=600&q=80' },
+    { category: 'desserts', name: 'Cheesecake Slice', price: '₱220', desc: 'Creamy New York-style cheesecake slice.', img: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80' },
+    { category: 'desserts', name: 'Parfait', price: '₱150', desc: 'Layered dessert with cream, fruit, and sweet crunch.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm9DhBshW-aV_rOEGOlYIevj439xP2TJJtey1VL4jp0l6e-zTLrIXX_R8&s=10' },
+
+    // Drinks
+    { category: 'drinks', name: 'San Mig Light Bucket', price: '₱480', desc: 'Ice-cold beer bucket (6 bottles). Free Nachos for every 2 buckets!', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAP7xdI--Q69o8rUL7J-hY_20rMEXJB51xZK2BEMHg6VjrkV8tPlFPq6ce&s=10' },
+
+    // Cocktails
+    { category: 'cocktails', name: 'Blue Lagoon Cocktail', price: '₱250', desc: 'Refreshing blue curaçao cocktail with citrus garnish. (Happy Hour Discount)', img: 'https://bols.com/cdn/shop/files/Blue-Curacao-Spritz-Cocktail-Bols-Blue-Curacao-Liqueur.jpg?v=1779200470&width=1920' },
+    { category: 'cocktails', name: 'Electric Green Sour', price: '₱250', desc: 'Vibrant apple melon blend topped with cherry & pineapple. (Happy Hour Discount)', img: 'https://3catsfoodie.com/wp-content/uploads/2026/01/IMG_5051.jpg' },
+    { category: 'cocktails', name: 'Sunset Tropical Punch', price: '₱240', desc: 'Sweet citrus and rum blend. (Happy Hour Discount)', img: 'https://brickellmag.com/wp-content/uploads/2019/06/1561588087-74249639220c75ac3549dcc4b1368930-683x1024.jpg' }
 ];
 
 // TOGGLE FULL MENU
