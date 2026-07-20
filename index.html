@@ -82,7 +82,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#drinks" onclick="toggleFullMenu(true, event)">Menu & Drinks</a></li>
+                <li><a href="#drinks" onclick="scrollToBestSellers(); event.preventDefault();">Menu & Drinks</a></li>
                 <li><a href="#events">Vibes</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -97,7 +97,8 @@
             <h1 class="hero-script-title">Blingzy's Restobar</h1>
             <p class="hero-subtitle">"GOOD FOOD — GOOD MUSIC — GOOD VIBES"</p>
             <div class="hero-btn-group">
-                <a href="#drinks" class="btn-gold-fill" onclick="toggleFullMenu(true, event)">Explore Full Menu</a>
+                <a href="#drinks" class="btn-gold-fill" onclick="scrollToBestSellers(); event.preventDefault();">Explore
+                    Menu</a>
                 <a href="#contact" class="btn-gold-outline">Find Our Bar</a>
             </div>
         </div>

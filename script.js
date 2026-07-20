@@ -222,22 +222,16 @@ const menuItems = [
     { category: 'cocktails', name: 'Sunset Tropical Punch', price: '₱240', desc: 'Sweet citrus and rum blend. (Happy Hour Discount)', img: 'https://brickellmag.com/wp-content/uploads/2019/06/1561588087-74249639220c75ac3549dcc4b1368930-683x1024.jpg' }
 ];
 
-// Tracks where the full menu was opened from, so the sticky bar's × button
-// can send you back to the right place: "hero" for the hero/nav "Explore
-// Full Menu" links, "bestsellers" for the "See Full Menu" button that lives
-// right in the Best Sellers section.
-let menuOpenOrigin = 'bestsellers';
-
 // TOGGLE FULL MENU
+// Only ever triggered by the "See Full Menu" button, which lives inside the
+// Best Sellers section — so the × button below always has one clear place
+// to send you back to.
 function toggleFullMenu(forceOpen = false, evt) {
-    // Stop the link's native "#drinks" jump so it can't fight our smooth-scroll
-    // (this was the cause of the scroll landing too far down, past the filters).
     if (evt) evt.preventDefault();
 
     const wrapper = document.getElementById('full-menu-section');
 
     if (forceOpen || !wrapper.classList.contains('active')) {
-        menuOpenOrigin = forceOpen ? 'hero' : 'bestsellers';
         const btn = document.getElementById('toggle-menu-btn');
         wrapper.classList.add('active');
         btn.innerText = "Hide Menu";
@@ -263,25 +257,16 @@ function closeFullMenu(options = {}) {
     const stickyClose = document.getElementById('sticky-filter-close');
     if (stickyClose) stickyClose.classList.remove('show');
 
-    if (options.returnToOrigin) {
-        requestAnimationFrame(menuOpenOrigin === 'hero' ? scrollToHero : scrollToBestSellers);
+    if (options.scrollToBestSellers) {
+        requestAnimationFrame(scrollToBestSellers);
     }
 }
 
-// Scrolls back up to the hero section (top of page), stopping just below
-// the fixed navbar.
-function scrollToHero() {
-    const section = document.getElementById('home');
-    if (!section) return;
-    const navbar = document.querySelector('.navbar');
-    const navHeight = navbar ? navbar.offsetHeight : 80;
-    const extraBreathingRoom = 16;
-    const targetTop = section.getBoundingClientRect().top + window.pageYOffset - (navHeight + extraBreathingRoom);
-    window.scrollTo({ top: targetTop, behavior: 'smooth' });
-}
-
 // Scrolls back up to the "Featured Drinks & Dishes" (best sellers) section,
-// stopping just below the fixed navbar.
+// stopping just below the fixed navbar. Also used by the hero's "Explore
+// Full Menu" button and the nav's "Menu & Drinks" link, which now just bring
+// you here — the "See Full Menu" button right in this section is the only
+// thing that actually opens the full menu list.
 function scrollToBestSellers() {
     const section = document.getElementById('drinks');
     if (!section) return;
@@ -467,7 +452,7 @@ function setupStickyFilterBar() {
     // brings you back to the Best Sellers section — lets you back out from
     // wherever you've scrolled to, without having to scroll back up manually.
     if (stickyCloseBtn) {
-        stickyCloseBtn.addEventListener('click', () => closeFullMenu({ returnToOrigin: true }));
+        stickyCloseBtn.addEventListener('click', () => closeFullMenu({ scrollToBestSellers: true }));
     }
 }
 
