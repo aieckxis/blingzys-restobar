@@ -10,128 +10,149 @@
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- STICKY NAVBAR -->
     <nav class="navbar">
-        <div class="brand-logo">BLINGZY'S</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu" onclick="toggleFullMenu(true)">Menu</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="brand-logo">BLINGZY'S</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#drinks">Drinks & Menu</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION WITH SCRIPT TITLE -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-subtitle">The Sundown Bar Experience</div>
-            <h1 class="hero-title">Cocktail Stage & Evenings</h1>
-            <p class="hero-tagline">"Good Food — Good Music — Good Vibes"</p>
-            <a href="#menu" class="btn-gold" onclick="toggleFullMenu(true)">View Full Menu</a>
+            <h1 class="hero-script-title">The Sundown Bar</h1>
+            <p class="hero-subtitle">FOR LONG EVENINGS & GOOD VIBES</p>
+            <a href="#drinks" class="btn-gold-fill" onclick="toggleFullMenu(true)">Read More</a>
         </div>
     </section>
 
-    <!-- SPLIT INFO SECTION -->
-    <section class="section-split" id="about">
-        <div class="split-col">
-            <div class="split-caption">Visit Our Bar</div>
-            <h2 class="split-heading">Open Hours</h2>
-            <div class="time-table">
-                <p><strong>Weekdays (Mon, Wed, Thu)</strong> 5:00 PM – 1:00 AM</p>
-                <p><strong>Weekends (Fri, Sat, Sun)</strong> 6:00 PM – 3:00 AM</p>
-                <p><strong>Tuesday</strong> CLOSED</p>
-            </div>
-        </div>
+    <!-- 2x2 QUAD GRID SECTION (OPEN HOURS & HAPPY HOUR) -->
+    <section class="quad-section" id="about">
+        <div class="quad-grid">
 
-        <div class="split-col center-img-frame">
-            <img src="711215669_1500320185441172_1213296101115352271_n.jpg" alt="Blingzy's Ambience"
-                onerror="this.src='https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80'">
-        </div>
-
-        <div class="split-col">
-            <div class="split-caption">The Best Offer</div>
-            <h2 class="split-heading">Happy Hour</h2>
-            <div class="time-table">
-                <p><strong>Daily 6:00 PM – 9:00 PM</strong></p>
-                <p>Discounted prices on all Signature Cocktails!</p>
-                <p style="margin-top: 15px; color: var(--accent-gold-bright);">🎶 Pair your drinks with live acoustic &
-                    DJ music sets.</p>
+            <!-- Box 1: Open Hours -->
+            <div class="quad-box text-box">
+                <h3 class="box-title">Open Hours</h3>
+                <div class="schedule-list">
+                    <div class="sched-item">
+                        <span class="day-label">WEEKDAYS (MON, WED, THU)</span>
+                        <span class="time-label">5:00 PM - 1:00 AM</span>
+                    </div>
+                    <div class="sched-item">
+                        <span class="day-label">WEEKENDS (FRI, SAT, SUN)</span>
+                        <span class="time-label">6:00 PM - 3:00 AM</span>
+                    </div>
+                    <div class="sched-item">
+                        <span class="day-label">TUESDAY</span>
+                        <span class="time-label closed">CLOSED</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- Box 2: Top Image -->
+            <div class="quad-box img-box">
+                <img src="711215669_1500320185441172_1213296101115352271_n.jpg" alt="Blingzy's Night Ambience"
+                    onerror="this.src='https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80'">
+            </div>
+
+            <!-- Box 3: Bottom Image -->
+            <div class="quad-box img-box">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80"
+                    alt="Bartender Crafting Drink">
+            </div>
+
+            <!-- Box 4: Happy Hour Promo -->
+            <div class="quad-box text-box highlight-box">
+                <h3 class="box-title">Happy Hours</h3>
+                <p class="promo-days">DAILY SPECIAL PROMO</p>
+                <div class="gold-divider"></div>
+                <p class="promo-time">6:00 PM - 9:00 PM</p>
+                <span class="promo-badge">DISCOUNTED COCKTAILS</span>
+                <p class="promo-subtext">*Free Nachos for every 2 beer buckets ordered!</p>
+            </div>
+
         </div>
     </section>
 
-    <!-- WIDE VISUAL BANNER -->
-    <div class="wide-banner">
-        <div class="wide-banner-overlay"></div>
-    </div>
-
-    <!-- WE RECOMMEND & FULL INTERACTIVE MENU SECTION -->
-    <section class="section-recommend" id="menu">
-        <div class="split-caption">This Week's Specials</div>
-        <h2 class="split-heading">We Recommend</h2>
-
-        <div class="recommend-grid">
-            <div class="menu-list">
-                <div class="menu-item-row"
-                    onclick="openItemModal('Creamy Beef Mushroom', '₱399', 'Tender beef slices simmered in rich mushroom cream sauce.', 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80')">
-                    <div class="item-title-price">
-                        <span class="item-name">Creamy Beef Mushroom</span>
-                        <span class="item-price">₱399</span>
-                    </div>
-                    <span class="item-desc">Tender beef slices simmered in rich mushroom cream sauce.</span>
-                </div>
-
-                <div class="menu-item-row"
-                    onclick="openItemModal('Pork Sisig', '₱350', 'Sizzling minced pork, onions, and chili peppers topped with fresh egg.', 'https://images.unsplash.com/photo-1625938145744-e380515399b7?auto=format&fit=crop&w=600&q=80')">
-                    <div class="item-title-price">
-                        <span class="item-name">Pork Sisig</span>
-                        <span class="item-price">₱350</span>
-                    </div>
-                    <span class="item-desc">Sizzling minced pork, onions, and chili peppers topped with fresh
-                        egg.</span>
-                </div>
-
-                <div class="menu-item-row"
-                    onclick="openItemModal('Sinigang na Hipon', '₱450', 'Tamarind sour soup with fresh shrimp and garden vegetables.', 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80')">
-                    <div class="item-title-price">
-                        <span class="item-name">Sinigang na Hipon</span>
-                        <span class="item-price">₱450</span>
-                    </div>
-                    <span class="item-desc">Tamarind sour soup with fresh shrimp and garden vegetables.</span>
-                </div>
-
-                <div class="menu-item-row"
-                    onclick="openItemModal('Electric Green Sour', '₱250', 'Vibrant apple melon blend topped with cherry & pineapple.', 'image_f6843a.jpg')">
-                    <div class="item-title-price">
-                        <span class="item-name">Electric Green Sour</span>
-                        <span class="item-price">₱250</span>
-                    </div>
-                    <span class="item-desc">Vibrant apple melon blend topped with cherry & pineapple.</span>
-                </div>
-
-                <div style="margin-top: 15px;">
-                    <button class="btn-gold" id="toggle-menu-btn" onclick="toggleFullMenu()">Explore Full Interactive
-                        Menu</button>
-                </div>
+    <!-- OUR DRINKS & FEATURED PRODUCTS -->
+    <section class="products-section" id="drinks">
+        <div class="section-header-row">
+            <div class="header-text-group">
+                <h2 class="section-heading">Our Drinks & Specials</h2>
+                <p class="section-subtext">Handcrafted cocktails, ice-cold beer buckets, and savory Filipino pulutan
+                    paired with live music.</p>
             </div>
-
-            <div>
-                <img class="recommend-img" src="image_f6843a.jpg" alt="Featured Cocktail"
-                    onerror="this.src='https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80'">
-            </div>
+            <button class="btn-gold-outline" id="toggle-menu-btn" onclick="toggleFullMenu()">See More</button>
         </div>
 
-        <!-- FULL INTERACTIVE MENU WRAPPER WITH PICTURES -->
+        <!-- CAROUSEL / ROW OF CARDS -->
+        <div class="drinks-row">
+
+            <div class="drink-card"
+                onclick="openItemModal('Blue Lagoon Cocktail', '₱250', 'Refreshing blue curaçao cocktail with citrus garnish.', 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80')">
+                <div class="drink-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+                        alt="Blue Lagoon">
+                </div>
+                <div class="drink-info">
+                    <h4>Blue Lagoon</h4>
+                    <p class="drink-price"><del>₱280</del> ₱250</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+
+            <div class="drink-card"
+                onclick="openItemModal('Electric Green Sour', '₱250', 'Vibrant apple melon blend topped with cherry & pineapple.', 'image_f6843a.jpg')">
+                <div class="drink-img-wrapper">
+                    <img src="image_f6843a.jpg" alt="Electric Green Sour"
+                        onerror="this.src='https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <div class="drink-info">
+                    <h4>Electric Green Sour</h4>
+                    <p class="drink-price"><del>₱280</del> ₱250</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+
+            <div class="drink-card"
+                onclick="openItemModal('San Mig Light Bucket', '₱480', 'Ice-cold beer bucket (6 bottles). Free Nachos with 2 buckets!', 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80')">
+                <div class="drink-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80"
+                        alt="Beer Bucket">
+                </div>
+                <div class="drink-info">
+                    <h4>San Mig Light Bucket</h4>
+                    <p class="drink-price">₱480</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+
+            <div class="drink-card"
+                onclick="openItemModal('Sunset Tropical Punch', '₱240', 'Sweet citrus and rum blend.', 'https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80')">
+                <div class="drink-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80"
+                        alt="Sunset Punch">
+                </div>
+                <div class="drink-info">
+                    <h4>Sunset Tropical Punch</h4>
+                    <p class="drink-price"><del>₱270</del> ₱240</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- EXPANDABLE FULL MENU SECTION -->
         <div class="full-menu-wrapper" id="full-menu-section">
-            <div style="margin: 50px 0 20px;">
-                <div class="split-caption">Complete Selection</div>
-                <h2 class="split-heading">Full Food & Drinks Menu</h2>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="filter-container">
+            <div class="filter-bar">
                 <button class="filter-btn active" onclick="filterCategory('all', event)">All Items</button>
                 <button class="filter-btn" onclick="filterCategory('mains', event)">Mains & Pulutan</button>
                 <button class="filter-btn" onclick="filterCategory('soups-pasta', event)">Soups & Pasta</button>
@@ -140,106 +161,54 @@
                 <button class="filter-btn" onclick="filterCategory('drinks', event)">Drinks & Cocktails</button>
             </div>
 
-            <!-- Dynamic Cards Grid -->
             <div class="menu-cards-grid" id="menu-cards-container"></div>
         </div>
     </section>
 
-    <!-- 3-CARD PROMOTIONS & LOCATION GRID -->
-    <section class="cards-section" id="events">
-        <!-- Card 1: Beer Promo -->
-        <div class="promo-box"
-            style="background-image: url('https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80');">
-            <div class="promo-box-overlay"></div>
-            <div class="promo-content">
-                <div class="promo-title">Free Nachos Promo</div>
-                <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom: 10px;">Get a free plate of Nachos
-                    for every 2 beer buckets ordered!</p>
-                <a href="#menu" onclick="toggleFullMenu(true)" class="promo-link">Learn More &rarr;</a>
-            </div>
-        </div>
-
-        <!-- Card 2: Interactive Location Map -->
-        <div class="promo-box"
-            style="background-image: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=600&q=80');">
-            <div class="promo-box-overlay"></div>
-            <div class="promo-content">
-                <div class="promo-title">Find Us in Imus</div>
-                <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom: 10px;">2nd Floor, One Genesis
-                    Bldg., Boulevard, Malagasang 1G</p>
-                <a href="https://maps.app.goo.gl/87KRafsDAbSyyffU8" target="_blank" class="promo-link">Open Google Maps
-                    &rarr;</a>
-            </div>
-        </div>
-
-        <!-- Card 3: Events & Bands -->
-        <div class="promo-box"
-            style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80');">
-            <div class="promo-box-overlay"></div>
-            <div class="promo-content">
-                <div class="promo-title">Live Bands & DJ Sets</div>
-                <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom: 10px;">Acoustic sessions & DJ
-                    performances featured weekly.</p>
-                <a href="#events" class="promo-link">View Schedule &rarr;</a>
-            </div>
+    <!-- VIDEO / VIBE BANNER SECTION -->
+    <section class="video-banner-section" id="events">
+        <div class="video-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1920&q=80"
+            alt="Live Music Background" class="video-bg-img">
+        <div class="play-btn-wrapper">
+            <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank" class="play-button">
+                ▶
+            </a>
+            <p class="video-caption">CATCH OUR LIVE BAND & DJ SETS</p>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer id="contact">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4 style="font-size: 1.4rem; color: var(--text-light);">BLINGZY'S</h4>
-                <p>The Sundown Bar — offering fine dining, signature cocktails, and live acoustic music sets in Imus,
-                    Cavite.</p>
-                <p style="font-size: 0.8rem; color: var(--accent-gold); margin-top: 10px;">* 7% Service charge applies
-                    to total bill.</p>
+        <div class="footer-container">
+            <div class="footer-brand">BLINGZY'S RESTOBAR</div>
+            <p class="footer-address">2nd Floor, One Genesis Bldg., Boulevard, Malagasang 1G, Imus, Philippines, 4103
+            </p>
+            <p class="footer-landmark">Landmark: Beside Ningnangan Imus / 711 New Cockpit Arena</p>
+
+            <div class="footer-contact-info">
+                <span>📞 0927 004 9311 / 0935 123 4567</span>
+                <span>✉️ tinnypootsie@yahoo.com</span>
             </div>
 
-            <div class="footer-col">
-                <h4>Pages</h4>
-                <p><a href="#home">Home</a></p>
-                <p><a href="#about">About Us</a></p>
-                <p><a href="#menu" onclick="toggleFullMenu(true)">Food & Drinks</a></p>
-                <p><a href="#events">Live Events</a></p>
-            </div>
-
-            <div class="footer-col">
-                <h4>Contact & Hours</h4>
-                <p><strong>Phone:</strong> 0927 004 9311 / 0935 123 4567</p>
-                <p><strong>Email:</strong> tinnypootsie@yahoo.com</p>
-                <p><strong>Weekdays:</strong> 5:00 PM – 1:00 AM</p>
-                <p><strong>Weekends:</strong> 6:00 PM – 3:00 AM</p>
-            </div>
-
-            <div class="footer-col">
-                <h4>Social Media</h4>
-                <div class="social-links-footer" style="margin-bottom: 15px;">
-                    <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank">Facebook</a> |
+            <div class="footer-actions">
+                <a href="https://maps.app.goo.gl/87KRafsDAbSyyffU8" target="_blank" class="btn-gold-outline">📍 Open
+                    Google Maps</a>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank">Facebook</a>
                     <a href="https://www.instagram.com/blingzys.restobar" target="_blank">Instagram</a>
                 </div>
-                <div class="insta-grid">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=200&q=80"
-                        alt="Live Music">
-                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=200&q=80"
-                        alt="DJ Set">
-                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=200&q=80"
-                        alt="Celebration">
-                </div>
             </div>
-        </div>
 
-        <div class="footer-bottom">
-            &copy; 2026 Blingzy's Restobar. All Rights Reserved.
+            <p class="copyright">&copy; 2026 Blingzy's Restobar. All Rights Reserved. (7% Service charge applies)</p>
         </div>
     </footer>
 
-    <!-- MODAL LIGHTBOX FOR ALL MENU ITEMS -->
+    <!-- MODAL LIGHTBOX -->
     <div class="modal" id="itemModal" onclick="closeModal(event)">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModalDirect()">&times;</button>
-            <img id="modalImg" class="modal-img" src="" alt="Dish Image"
-                onerror="this.src='https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80'">
+            <img id="modalImg" class="modal-img" src="" alt="Dish Image">
             <div class="modal-body">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;">
                     <h2 id="modalTitle"

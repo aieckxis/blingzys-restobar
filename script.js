@@ -61,7 +61,7 @@ function toggleFullMenu(forceOpen = false) {
         }
     } else {
         wrapper.classList.remove('active');
-        btn.innerText = "Explore Full Interactive Menu";
+        btn.innerText = "See More";
     }
 }
 
