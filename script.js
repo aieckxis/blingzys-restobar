@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // COMPLETE BLINGZY'S RESTOBAR MENU DATASET
 const menuItems = [
     // Mains & Pulutan
-    { category: 'mains', name: 'Creamy Beef Mushroom', price: '₱399', desc: 'Tender beef slices simmered in rich mushroom cream sauce.', img: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80' },
+    { category: 'mains', name: 'Creamy Beef Mushroom', price: '₱399', desc: 'Tender beef slices simmered in rich mushroom cream sauce.', img: 'https://www.cookinwithmima.com/wp-content/uploads/2018/10/Creamy-Mushroom-Steak.jpg' },
     { category: 'mains', name: 'Beef Salpicao', price: '₱399', desc: 'Sautéed beef tenderloin cubes loaded with toasted garlic and butter.', img: 'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80' },
     { category: 'mains', name: 'Gambas', price: '₱399', desc: 'Sizzling shrimp cooked in garlic, olive oil, and chili peppers.', img: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=600&q=80' },
     { category: 'mains', name: 'Butter Garlic Shrimp', price: '₱399', desc: 'Juicy shrimp tossed in savory garlic butter sauce.', img: 'https://images.unsplash.com/photo-1559737671-1a3ebc70faef?auto=format&fit=crop&w=600&q=80' },
@@ -45,7 +45,7 @@ const menuItems = [
     { category: 'mains', name: 'Buffalo Wings', price: '₱370', desc: 'Crispy chicken wings glazed in spicy, tangy buffalo sauce.', img: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=600&q=80' },
     { category: 'mains', name: 'Bagnet', price: '₱350', desc: 'Classic Ilocano crisp-fried pork belly.', img: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=600&q=80' },
     { category: 'mains', name: 'Lechon Kawali', price: '₱350', desc: 'Golden crispy pork belly served with savory liver sauce.', img: 'https://images.unsplash.com/photo-1514944288352-fffac99f0bdf?auto=format&fit=crop&w=600&q=80' },
-    { category: 'mains', name: 'Pork Sisig', price: '₱350', desc: 'Sizzling minced pork, onions, and chili peppers topped with fresh egg.', img: 'https://images.unsplash.com/photo-1625938145744-e380515399b7?auto=format&fit=crop&w=600&q=80' },
+    { category: 'mains', name: 'Pork Sisig', price: '₱350', desc: 'Sizzling minced pork, onions, and chili peppers topped with fresh egg.', img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhm-m8a8Q3JRgaqSGOcHqI8RptUYPe16IXr-FQgcdWm7slPyn_vGKaC6QnQBWTM71ZC5snRFh8V26yg0C2mcVd_flCj30ebr1gB7L5Du0ihlottu-aptH4HjgBaPxIRe7Q7xYGnGP_dqiJe/s1600/Sizzling+Pork+Sisig+Recipe-5.jpg' },
     { category: 'mains', name: 'Dynamite', price: '₱350', desc: 'Green chili peppers stuffed with cheese and pork wrapped in lumpia wrapper.', img: 'https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=600&q=80' },
     { category: 'mains', name: 'Nachos', price: '₱340', desc: 'Crispy tortilla chips topped with cheese, minced meat, and jalapeños.', img: 'https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=600&q=80' },
     { category: 'mains', name: 'Chicharon Bulaklak', price: '₱320', desc: 'Deep-fried ruffle fat served with spiced vinegar dip.', img: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80' },
@@ -76,9 +76,9 @@ const menuItems = [
 
     // Drinks & Cocktails
     { category: 'drinks', name: 'Blue Lagoon Cocktail', price: '₱250', desc: 'Refreshing blue curaçao cocktail with citrus garnish. (Happy Hour Discount)', img: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80' },
-    { category: 'drinks', name: 'Electric Green Sour', price: '₱250', desc: 'Vibrant apple melon blend topped with cherry & pineapple. (Happy Hour Discount)', img: 'image_f6843a.jpg' },
+    { category: 'drinks', name: 'Electric Green Sour', price: '₱250', desc: 'Vibrant apple melon blend topped with cherry & pineapple. (Happy Hour Discount)', img: 'https://b3331843.smushcdn.com/3331843/wp-content/uploads/drinklab-green-monkey-2026-05-13-pr-672x375.jpg?lossy=2&strip=1&webp=1' },
     { category: 'drinks', name: 'Sunset Tropical Punch', price: '₱240', desc: 'Sweet citrus and rum blend. (Happy Hour Discount)', img: 'https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80' },
-    { category: 'drinks', name: 'San Mig Light Bucket', price: '₱480', desc: 'Ice-cold beer bucket (6 bottles). Free Nachos for every 2 buckets!', img: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80' }
+    { category: 'drinks', name: 'San Mig Light Bucket', price: '₱480', desc: 'Ice-cold beer bucket (6 bottles). Free Nachos for every 2 buckets!', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAP7xdI--Q69o8rUL7J-hY_20rMEXJB51xZK2BEMHg6VjrkV8tPlFPq6ce&s=10' }
 ];
 
 // TOGGLE FULL MENU
