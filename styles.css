@@ -576,6 +576,221 @@ button:focus-visible {
     font-style: italic;
 }
 
+/* --- BEST SELLER TAG (replaces fake star ratings) --- */
+.best-seller-tag {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+    color: var(--accent-peach);
+    font-weight: 600;
+}
+
+/* --- PHOTO GALLERY --- */
+.gallery-section {
+    max-width: 1140px;
+    margin: 0 auto 100px;
+    padding: 0 24px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 160px;
+    gap: 14px;
+}
+
+.gallery-item {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border-gold);
+}
+
+.gallery-item--tall {
+    grid-row: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+/* --- TESTIMONIALS --- */
+.testimonials-section {
+    max-width: 1140px;
+    margin: 0 auto 100px;
+    padding: 0 24px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.testimonial-card {
+    background: var(--bg-quad-box);
+    border: 1px solid var(--border-gold);
+    border-radius: 6px;
+    padding: 28px 22px 22px;
+    position: relative;
+}
+
+.quote-mark {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: var(--accent-gold);
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.testimonial-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 14px;
+}
+
+.testimonial-author {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    color: var(--accent-peach);
+}
+
+.testimonials-note {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.testimonials-note a {
+    color: var(--accent-gold);
+    text-decoration: underline;
+}
+
+/* --- FOOTER MAP EMBED --- */
+.map-embed {
+    margin-top: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border-gold);
+    line-height: 0;
+}
+
+/* --- LOADING SKELETON (menu grid images) --- */
+.menu-card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.menu-card-img-wrapper.skeleton::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg,
+            rgba(255, 255, 255, 0.04) 20%,
+            rgba(255, 255, 255, 0.12) 40%,
+            rgba(255, 255, 255, 0.04) 60%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.3s ease-in-out infinite;
+    z-index: 1;
+}
+
+.menu-card-img-wrapper.skeleton .menu-card-img {
+    opacity: 0;
+}
+
+@keyframes skeleton-shimmer {
+    0% {
+        background-position: 150% 0;
+    }
+
+    100% {
+        background-position: -50% 0;
+    }
+}
+
+/* --- FLOATING ACTION BUTTONS --- */
+.fab {
+    position: fixed;
+    right: 22px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    z-index: 900;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-gold);
+    cursor: pointer;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.fab-messenger {
+    bottom: 22px;
+    background: linear-gradient(135deg, #a020f0 0%, #00c6ff 100%);
+    color: #fff;
+}
+
+.fab-messenger:hover {
+    transform: scale(1.08);
+}
+
+.fab-top {
+    bottom: 88px;
+    background: var(--accent-gold);
+    color: var(--bg-dark);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+}
+
+.fab-top.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.fab-top:hover {
+    transform: scale(1.08);
+}
+
+@media (max-width: 650px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 130px;
+    }
+
+    .fab {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+        right: 16px;
+    }
+
+    .fab-messenger {
+        bottom: 16px;
+    }
+
+    .fab-top {
+        bottom: 74px;
+    }
+}
+
 /* --- VIDEO / VIBE BANNER --- */
 .video-banner-section {
     position: relative;

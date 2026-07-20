@@ -19,6 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // BACK TO TOP BUTTON: show only after scrolling down a bit
+    const backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+        const toggleBackToTop = () => {
+            backToTop.classList.toggle('show', window.scrollY > 500);
+        };
+        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+        toggleBackToTop();
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 });
 
 // COMPLETE BLINGZY'S RESTOBAR MENU DATASET
@@ -99,7 +112,9 @@ function renderMenuCards(filter = 'all') {
         card.onclick = () => openItemModal(item.name, item.price, item.desc, item.img);
 
         card.innerHTML = `
-      <img class="menu-card-img" src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.src='${fallbackImg}'">
+      <div class="menu-card-img-wrapper skeleton">
+        <img class="menu-card-img" src="${item.img}" alt="${item.name}" loading="lazy">
+      </div>
       <div class="menu-card-content">
         <div class="menu-card-header">
           <div class="menu-card-title">${item.name}</div>
@@ -109,6 +124,17 @@ function renderMenuCards(filter = 'all') {
       </div>
     `;
         container.appendChild(card);
+
+        // Remove the shimmer once the image is done loading (success or fallback)
+        const imgEl = card.querySelector('.menu-card-img');
+        const wrapperEl = card.querySelector('.menu-card-img-wrapper');
+        const clearSkeleton = () => wrapperEl.classList.remove('skeleton');
+        imgEl.addEventListener('load', clearSkeleton, { once: true });
+        imgEl.addEventListener('error', () => {
+            imgEl.src = fallbackImg;
+            clearSkeleton();
+        }, { once: true });
+        if (imgEl.complete) clearSkeleton();
     });
 }
 

@@ -79,6 +79,7 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#drinks" onclick="toggleFullMenu(true)">Menu & Drinks</a></li>
                 <li><a href="#events">Vibes</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -153,6 +154,40 @@
         </div>
     </section>
 
+    <!-- PHOTO GALLERY -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-header-row">
+            <div class="header-text-group">
+                <span class="section-tag">MOMENTS AT BLINGZY'S</span>
+                <h2 class="section-heading">The Gallery</h2>
+                <p class="section-subtext">A peek at our nights — live band sets, birthday celebrations, and the
+                    crowd that keeps coming back.</p>
+            </div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-item--tall">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=700&q=80"
+                    alt="Live band performing at Blingzy's" loading="lazy" decoding="async">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=700&q=80"
+                    alt="Guests celebrating a birthday at Blingzy's" loading="lazy" decoding="async">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=700&q=80"
+                    alt="Crowd enjoying drinks and music" loading="lazy" decoding="async">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=700&q=80"
+                    alt="DJ set at Blingzy's Sundown Bar" loading="lazy" decoding="async">
+            </div>
+            <div class="gallery-item gallery-item--tall">
+                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=700&q=80"
+                    alt="Signature cocktail being served" loading="lazy" decoding="async">
+            </div>
+        </div>
+    </section>
+
     <!-- OUR DRINKS & FEATURED PRODUCTS -->
     <section class="products-section" id="drinks">
         <div class="section-header-row">
@@ -177,7 +212,7 @@
                 <div class="drink-info">
                     <h4>Creamy Beef Mushroom</h4>
                     <p class="drink-price">₱399</p>
-                    <div class="stars">★★★★★</div>
+                    <span class="best-seller-tag">🔥 Best Seller</span>
                 </div>
             </div>
 
@@ -190,7 +225,7 @@
                 <div class="drink-info">
                     <h4>Pork Sisig</h4>
                     <p class="drink-price">₱350</p>
-                    <div class="stars">★★★★★</div>
+                    <span class="best-seller-tag">🔥 Best Seller</span>
                 </div>
             </div>
 
@@ -203,7 +238,7 @@
                 <div class="drink-info">
                     <h4>Electric Green Sour</h4>
                     <p class="drink-price"><del>₱280</del> ₱250</p>
-                    <div class="stars">★★★★★</div>
+                    <span class="best-seller-tag">🔥 Best Seller</span>
                 </div>
             </div>
 
@@ -216,7 +251,7 @@
                 <div class="drink-info">
                     <h4>San Mig Light Bucket</h4>
                     <p class="drink-price">₱480</p>
-                    <div class="stars">★★★★★</div>
+                    <span class="best-seller-tag">🔥 Best Seller</span>
                 </div>
             </div>
 
@@ -235,6 +270,39 @@
 
             <div class="menu-cards-grid" id="menu-cards-container"></div>
         </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="section-header-row">
+            <div class="header-text-group">
+                <span class="section-tag">WHAT GUESTS ARE SAYING</span>
+                <h2 class="section-heading">Straight From Our Regulars</h2>
+            </div>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">Pinakamasarap na sisig sa Imus, sobrang sulit! Yung live band pa on
+                    weekends, chef's kiss talaga ang vibe.</p>
+                <p class="testimonial-author">— Marco D.</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">We celebrated my birthday here and the staff made it extra special.
+                    Happy hour cocktails are so worth it too!</p>
+                <p class="testimonial-author">— Ella R.</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">Go-to namin every Friday after work. Chill ambiance, malapit lang, at
+                    laging maganda ang tugtog.</p>
+                <p class="testimonial-author">— Jhun Carlo P.</p>
+            </div>
+        </div>
+        <p class="testimonials-note">Have a favorite Blingzy's moment? Tag us <a
+                href="https://www.instagram.com/blingzys.restobar" target="_blank" rel="noopener noreferrer">on
+                Instagram</a> — we might feature you here.</p>
     </section>
 
     <!-- VIDEO / VIBE BANNER SECTION -->
@@ -263,6 +331,12 @@
                     <p>2nd Floor, One Genesis Bldg., Boulevard, Malagasang 1G, Imus, Cavite, 4103</p>
                     <p class="footer-highlight">Landmark: Beside Ningnangan Imus / 711 New Cockpit Arena</p>
                     <p class="footer-muted">GPS: 14°22'52.7"N 120°54'57.8"E</p>
+                    <div class="map-embed">
+                        <iframe src="https://www.google.com/maps?q=14.381306,120.916056&hl=en&z=16&output=embed"
+                            width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Blingzy's Restobar location map"></iframe>
+                    </div>
                 </div>
 
                 <div class="footer-col">
@@ -308,6 +382,16 @@
             </div>
         </div>
     </div>
+
+    <!-- FLOATING ACTION BUTTONS -->
+    <a href="https://m.me/61561725791782" target="_blank" rel="noopener noreferrer" class="fab fab-messenger"
+        aria-label="Message us on Messenger" title="Chat with us on Messenger">
+        💬
+    </a>
+
+    <button type="button" class="fab fab-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+        ↑
+    </button>
 
     <script src="script.js"></script>
 </body>
