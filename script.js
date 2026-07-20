@@ -219,9 +219,7 @@ function toggleFullMenu(forceOpen = false) {
         wrapper.classList.add('active');
         btn.innerText = "Hide Menu";
         renderMenuCards('all');
-        if (forceOpen) {
-            wrapper.scrollIntoView({ behavior: 'smooth' });
-        }
+        wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
         wrapper.classList.remove('active');
         btn.innerText = "See Full Menu";

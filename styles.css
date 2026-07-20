@@ -1258,15 +1258,13 @@ footer {
     }
 
     .play-button {
-        width: 54px;
-        height: 54px;
-        font-size: 1.25rem;
+        display: none;
     }
 
     .video-caption {
         font-size: 0.72rem;
         letter-spacing: 2px;
-        margin-top: 14px;
+        margin-top: 0;
         line-height: 1.5;
     }
 
@@ -1288,4 +1286,10 @@ footer {
         font-size: 0.66rem;
         letter-spacing: 1.5px;
     }
+}
+
+.video-caption {
+    font-size: 0.66rem;
+    letter-spacing: 1.5px;
+}
 }
