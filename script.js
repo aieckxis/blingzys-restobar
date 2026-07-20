@@ -219,11 +219,24 @@ function toggleFullMenu(forceOpen = false) {
         wrapper.classList.add('active');
         btn.innerText = "Hide Menu";
         renderMenuCards('all');
-        wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        scrollToFullMenu();
     } else {
         wrapper.classList.remove('active');
         btn.innerText = "See Full Menu";
     }
+}
+
+// Scroll to the full menu section, stopping just below the fixed navbar
+// so the filter bar is always visible right away (not scrolled past it).
+function scrollToFullMenu() {
+    const wrapper = document.getElementById('full-menu-section');
+    if (!wrapper) return;
+    const navbar = document.querySelector('.navbar');
+    const navHeight = navbar ? navbar.offsetHeight : 80;
+    const extraBreathingRoom = 16;
+    const targetTop = wrapper.getBoundingClientRect().top + window.pageYOffset - (navHeight + extraBreathingRoom);
+
+    window.scrollTo({ top: targetTop, behavior: 'smooth' });
 }
 
 // RENDER MENU CARDS
