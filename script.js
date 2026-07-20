@@ -1,5 +1,24 @@
 const fallbackImg = 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80';
 
+// MOBILE NAVBAR TOGGLE
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close nav drawer when link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+});
+
 // COMPLETE BLINGZY'S RESTOBAR MENU DATASET
 const menuItems = [
     // Mains & Pulutan
@@ -54,7 +73,7 @@ function toggleFullMenu(forceOpen = false) {
 
     if (forceOpen || !wrapper.classList.contains('active')) {
         wrapper.classList.add('active');
-        btn.innerText = "Hide Full Menu";
+        btn.innerText = "Hide Menu";
         renderMenuCards('all');
         if (forceOpen) {
             wrapper.scrollIntoView({ behavior: 'smooth' });
@@ -94,7 +113,9 @@ function renderMenuCards(filter = 'all') {
 // FILTER CATEGORY
 function filterCategory(catName, evt) {
     document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    evt.target.classList.add('active');
+    if (evt && evt.target) {
+        evt.target.classList.add('active');
+    }
     renderMenuCards(catName);
 }
 

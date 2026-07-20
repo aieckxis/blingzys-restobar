@@ -14,10 +14,13 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="brand-logo">BLINGZY'S</div>
-            <ul class="nav-links">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#drinks">Menu & Drinks</a></li>
+                <li><a href="#drinks" onclick="toggleFullMenu(true)">Menu & Drinks</a></li>
                 <li><a href="#events">Vibes</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -28,9 +31,13 @@
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-script-title">The Sundown Bar</h1>
+            <span class="hero-badge">THE SUNDOWN BAR</span>
+            <h1 class="hero-script-title">Blingzy's Restobar</h1>
             <p class="hero-subtitle">"GOOD FOOD — GOOD MUSIC — GOOD VIBES"</p>
-            <a href="#drinks" class="btn-gold-fill" onclick="toggleFullMenu(true)">Explore Menu</a>
+            <div class="hero-btn-group">
+                <a href="#drinks" class="btn-gold-fill" onclick="toggleFullMenu(true)">Explore Full Menu</a>
+                <a href="#contact" class="btn-gold-outline">Find Our Bar</a>
+            </div>
         </div>
     </section>
 
@@ -40,7 +47,8 @@
 
             <!-- Box 1: Open Hours -->
             <div class="quad-box text-box">
-                <h3 class="box-title">Open Hours</h3>
+                <div class="box-icon">🕒</div>
+                <h3 class="box-title">Operating Hours</h3>
                 <div class="schedule-list">
                     <div class="sched-item">
                         <span class="day-label">WEEKDAYS (MON, WED, THU)</span>
@@ -61,16 +69,19 @@
             <div class="quad-box img-box">
                 <img src="711215669_1500320185441172_1213296101115352271_n.jpg" alt="Blingzy's Ambience"
                     onerror="this.src='https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80'">
+                <div class="img-overlay-tag">Blingzy's Nightlife</div>
             </div>
 
             <!-- Box 3: Bottom Image -->
             <div class="quad-box img-box">
                 <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80"
                     alt="Bartender & Drinks">
+                <div class="img-overlay-tag">Crafted Drinks</div>
             </div>
 
             <!-- Box 4: Happy Hour Promo -->
             <div class="quad-box text-box highlight-box">
+                <div class="box-icon">🍸</div>
                 <h3 class="box-title">Happy Hours</h3>
                 <p class="promo-days">DAILY SPECIAL PROMO</p>
                 <div class="gold-divider"></div>
@@ -86,11 +97,12 @@
     <section class="products-section" id="drinks">
         <div class="section-header-row">
             <div class="header-text-group">
+                <span class="section-tag">CURATED SELECTION</span>
                 <h2 class="section-heading">Featured Drinks & Dishes</h2>
-                <p class="section-subtext">Click any item below to view full details or explore our complete interactive
-                    menu.</p>
+                <p class="section-subtext">Tap any item to preview details, or expand to search through our full menu.
+                </p>
             </div>
-            <button class="btn-gold-outline" id="toggle-menu-btn" onclick="toggleFullMenu()">See Full Menu</button>
+            <button class="btn-gold-fill" id="toggle-menu-btn" onclick="toggleFullMenu()">See Full Menu</button>
         </div>
 
         <!-- FEATURED CARDS ROW -->
@@ -136,7 +148,7 @@
             </div>
 
             <div class="drink-card"
-                onclick="openItemModal('San Mig Light Bucket', '₱480', 'Ice-cold beer bucket (6 bottles). Get free Nachos with 2 buckets!', 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80')">
+                onclick="openItemModal('San Mig Light Bucket', '₱480', 'Ice-cold beer bucket (6 bottles). Free Nachos for every 2 buckets!', 'https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80')">
                 <div class="drink-img-wrapper">
                     <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=600&q=80"
                         alt="Beer Bucket">
@@ -171,7 +183,8 @@
         <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1920&q=80"
             alt="Live Music Background" class="video-bg-img">
         <div class="play-btn-wrapper">
-            <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank" class="play-button">▶</a>
+            <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank" class="play-button"
+                title="Watch on Facebook">▶</a>
             <p class="video-caption">LIVE BANDS, ACOUSTIC SESSIONS & DJ SETS</p>
         </div>
     </section>
@@ -179,30 +192,41 @@
     <!-- FOOTER & COMPLETE LOCATION INFO -->
     <footer id="contact">
         <div class="footer-container">
-            <div class="footer-brand">BLINGZY'S RESTOBAR</div>
-            <p class="footer-tagline">"The Sundown Bar"</p>
-
-            <div class="footer-details">
-                <p><strong>📍 Address:</strong> 2nd Floor, One Genesis Bldg., Boulevard, Malagasang 1G, Imus,
-                    Philippines, 4103</p>
-                <p><strong>📍 Coordinates:</strong> 14°22'52.7"N 120°54'57.8"E</p>
-                <p><strong>📍 Landmark:</strong> Beside Ningnangan Imus / 711 New Cockpit Arena</p>
-                <p><strong>📞 Contact:</strong> 0927 004 9311 / 0935 123 4567</p>
-                <p><strong>✉️ Email:</strong> tinnypootsie@yahoo.com</p>
+            <div class="footer-header">
+                <h3 class="footer-brand">BLINGZY'S RESTOBAR</h3>
+                <p class="footer-tagline">"The Sundown Bar"</p>
             </div>
 
-            <div class="footer-actions">
-                <a href="https://maps.app.goo.gl/87KRafsDAbSyyffU8" target="_blank" class="btn-gold-outline">📍 Open
-                    Google Maps</a>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank">Facebook</a>
-                    <span>|</span>
-                    <a href="https://www.instagram.com/blingzys.restobar" target="_blank">Instagram</a>
+            <div class="footer-grid-layout">
+                <div class="footer-col">
+                    <h4>📍 Location</h4>
+                    <p>2nd Floor, One Genesis Bldg., Boulevard, Malagasang 1G, Imus, Cavite, 4103</p>
+                    <p class="footer-highlight">Landmark: Beside Ningnangan Imus / 711 New Cockpit Arena</p>
+                    <p class="footer-muted">GPS: 14°22'52.7"N 120°54'57.8"E</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>📞 Contact & Socials</h4>
+                    <p><strong>Phone:</strong> 0927 004 9311 / 0935 123 4567</p>
+                    <p><strong>Email:</strong> tinnypootsie@yahoo.com</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61561725791782" target="_blank">Facebook</a>
+                        <span>•</span>
+                        <a href="https://www.instagram.com/blingzys.restobar" target="_blank">Instagram</a>
+                    </div>
                 </div>
             </div>
 
-            <p class="service-notice">ℹ️ Please note: We have a service charge of 7% of your entire bill.</p>
-            <p class="copyright">&copy; 2026 Blingzy's Restobar. All Rights Reserved.</p>
+            <div class="footer-actions">
+                <a href="https://maps.app.goo.gl/87KRafsDAbSyyffU8" target="_blank" class="btn-gold-fill">📍 Open in
+                    Google Maps</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="service-notice">ℹ️ Please note: We have a service charge of <strong>7%</strong> of your entire
+                    bill.</p>
+                <p class="copyright">&copy; 2026 Blingzy's Restobar. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
@@ -212,16 +236,11 @@
             <button class="close-modal" onclick="closeModalDirect()">&times;</button>
             <img id="modalImg" class="modal-img" src="" alt="Dish Image">
             <div class="modal-body">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;">
-                    <h2 id="modalTitle"
-                        style="font-family:'Cinzel', serif; color: var(--accent-gold); font-size: 1.3rem;">Item Name
-                    </h2>
-                    <div id="modalPrice"
-                        style="color: var(--accent-peach); font-weight: 600; font-family: 'Cinzel', serif; font-size: 1.2rem;">
-                        ₱0</div>
+                <div class="modal-title-row">
+                    <h2 id="modalTitle">Item Name</h2>
+                    <div id="modalPrice">₱0</div>
                 </div>
-                <p id="modalDesc" style="color: var(--text-light); font-size: 0.9rem; font-style: italic;">Description
-                    details...</p>
+                <p id="modalDesc">Description details...</p>
             </div>
         </div>
     </div>
