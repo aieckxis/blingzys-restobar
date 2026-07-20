@@ -246,7 +246,7 @@ function toggleFullMenu(forceOpen = false, evt) {
 // Collapses the full menu back down. Used both by the "Hide Menu" button and
 // by the sticky filter bar's close button (so you can back out of the menu
 // mid-scroll without having to scroll all the way back up first).
-function closeFullMenu() {
+function closeFullMenu(options = {}) {
     const wrapper = document.getElementById('full-menu-section');
     const btn = document.getElementById('toggle-menu-btn');
     wrapper.classList.remove('active');
@@ -255,6 +255,22 @@ function closeFullMenu() {
     if (stickyBar) stickyBar.classList.remove('show');
     const stickyClose = document.getElementById('sticky-filter-close');
     if (stickyClose) stickyClose.classList.remove('show');
+
+    if (options.scrollToBestSellers) {
+        requestAnimationFrame(scrollToBestSellers);
+    }
+}
+
+// Scrolls back up to the "Featured Drinks & Dishes" (best sellers) section,
+// stopping just below the fixed navbar.
+function scrollToBestSellers() {
+    const section = document.getElementById('drinks');
+    if (!section) return;
+    const navbar = document.querySelector('.navbar');
+    const navHeight = navbar ? navbar.offsetHeight : 80;
+    const extraBreathingRoom = 16;
+    const targetTop = section.getBoundingClientRect().top + window.pageYOffset - (navHeight + extraBreathingRoom);
+    window.scrollTo({ top: targetTop, behavior: 'smooth' });
 }
 
 // Scroll to the full menu section, stopping just below the fixed navbar
@@ -315,6 +331,34 @@ function filterCategory(catName, evt) {
         btn.classList.toggle('active', btn.dataset.category === catName);
     });
     renderMenuCards(catName);
+    requestAnimationFrame(scrollToMenuGridTop);
+}
+
+// After switching category, jumps back to the top of the results grid.
+// Without this, picking a smaller category while scrolled way down (e.g.
+// near the footer while on "All Items") would re-render the grid but leave
+// you stranded below it, looking at the footer instead of the new results.
+function scrollToMenuGridTop() {
+    const container = document.getElementById('menu-cards-container');
+    if (!container) return;
+
+    const navbar = document.querySelector('.navbar');
+    const navHeight = navbar ? navbar.offsetHeight : 80;
+
+    // Account for the sticky filter bar too, if it's currently showing,
+    // so the first row of results doesn't land underneath it.
+    const stickyBar = document.getElementById('sticky-filter-bar');
+    const stickyHeight = (stickyBar && stickyBar.classList.contains('show')) ? stickyBar.offsetHeight : 0;
+
+    const extraBreathingRoom = 16;
+    const targetTop = container.getBoundingClientRect().top + window.pageYOffset
+        - (navHeight + stickyHeight + extraBreathingRoom);
+
+    // Don't scroll down if the grid is already fully in view further down
+    // the page than our target — only correct for the "scrolled past it" case.
+    if (window.pageYOffset > targetTop) {
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+    }
 }
 
 // STICKY FILTER BAR
@@ -394,11 +438,11 @@ function setupStickyFilterBar() {
     window.addEventListener('resize', positionCloseBtn);
     onScroll();
 
-    // Clicking the × closes the whole menu (not just the sticky bar) — lets
-    // you back out from wherever you've scrolled to, without having to
-    // scroll back up to the "Hide Menu" button first.
+    // Clicking the × closes the whole menu (not just the sticky bar) and
+    // brings you back to the Best Sellers section — lets you back out from
+    // wherever you've scrolled to, without having to scroll back up manually.
     if (stickyCloseBtn) {
-        stickyCloseBtn.addEventListener('click', closeFullMenu);
+        stickyCloseBtn.addEventListener('click', () => closeFullMenu({ scrollToBestSellers: true }));
     }
 }
 
