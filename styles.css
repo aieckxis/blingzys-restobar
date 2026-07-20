@@ -934,12 +934,14 @@ button:focus-visible {
     justify-content: center;
     overflow: hidden;
     margin-bottom: 80px;
+    padding: 20px;
 }
 
 .video-bg-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 30%;
 }
 
 .video-overlay {
@@ -952,6 +954,7 @@ button:focus-visible {
     position: relative;
     z-index: 2;
     text-align: center;
+    max-width: 90%;
 }
 
 .follow-cta {
@@ -1221,5 +1224,38 @@ footer {
 
     .drink-img-wrapper {
         height: 120px;
+    }
+
+    .video-banner-section {
+        height: 280px;
+        margin-bottom: 50px;
+    }
+
+    .play-button {
+        width: 54px;
+        height: 54px;
+        font-size: 1.25rem;
+    }
+
+    .video-caption {
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+        margin-top: 14px;
+        line-height: 1.5;
+    }
+
+    .follow-subtext {
+        font-size: 0.72rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .video-banner-section {
+        height: 240px;
+    }
+
+    .video-caption {
+        font-size: 0.66rem;
+        letter-spacing: 1.5px;
     }
 }
