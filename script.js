@@ -165,25 +165,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // COMPLETE BLINGZY'S RESTOBAR MENU DATASET
 const menuItems = [
-    // Mains & Pulutan
-    { category: 'mains', name: 'Creamy Beef Mushroom', price: '₱399', desc: 'Tender beef slices simmered in rich mushroom cream sauce.', img: 'https://www.cookinwithmima.com/wp-content/uploads/2018/10/Creamy-Mushroom-Steak.jpg' },
-    { category: 'mains', name: 'Beef Salpicao', price: '₱399', desc: 'Sautéed beef tenderloin cubes loaded with toasted garlic and butter.', img: 'https://yummykitchentv.com/wp-content/uploads/2022/06/beef-salpicao-recipe-02.jpg' },
-    { category: 'mains', name: 'Gambas', price: '₱399', desc: 'Sizzling shrimp cooked in garlic, olive oil, and chili peppers.', img: 'https://www.allrecipes.com/thmb/_rjAOFACbhUhfhLwmMpYcPwu95o=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/266085-spanish-garlic-shrimp-DDMFS-beauty-4x3-e4e199450d704150b787a0eb59640add.jpg' },
-    { category: 'mains', name: 'Butter Garlic Shrimp', price: '₱399', desc: 'Juicy shrimp tossed in savory garlic butter sauce.', img: 'https://www.foodfidelity.com/wp-content/uploads/2025/02/Garlic-Butter-Shrimp-low-pro-best-1.jpg' },
-    { category: 'mains', name: 'Sizzling Bagnet', price: '₱399', desc: 'Crispy deep-fried pork belly served hot on a sizzling plate.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRww-n8jdh6gk-qr_ZiJDt6GRoT_NSQsQcjADSgQa9CvoD32564ssUR7usP&s=10' },
-    { category: 'mains', name: 'Buffalo Wings', price: '₱370', desc: 'Crispy chicken wings glazed in spicy, tangy buffalo sauce.', img: 'https://easychickenrecipes.com/wp-content/uploads/2023/08/featured-buffalo-wings-recipe.jpg' },
-    { category: 'mains', name: 'Bagnet', price: '₱350', desc: 'Classic Ilocano crisp-fried pork belly.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBeMi1IotdGg3ODNRuzNOyoJ1epFnmQOaIMyUzumKoskW3gD2g5qOgh1_6&s=10' },
-    { category: 'mains', name: 'Lechon Kawali', price: '₱350', desc: 'Golden crispy pork belly served with savory liver sauce.', img: 'https://www.seriouseats.com/thmb/orl1xkPajYxzsOZwkooPtdYvM-M=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20210508-lechon-kawali-melissa-hom-2-inchChunks-seriouseats-1d53c12cee234305b921362e2106bf29.jpg' },
-    { category: 'mains', name: 'Pork Sisig', price: '₱350', desc: 'Sizzling minced pork, onions, and chili peppers topped with fresh egg.', img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhm-m8a8Q3JRgaqSGOcHqI8RptUYPe16IXr-FQgcdWm7slPyn_vGKaC6QnQBWTM71ZC5snRFh8V26yg0C2mcVd_flCj30ebr1gB7L5Du0ihlottu-aptH4HjgBaPxIRe7Q7xYGnGP_dqiJe/s1600/Sizzling+Pork+Sisig+Recipe-5.jpg' },
-    { category: 'mains', name: 'Dynamite', price: '₱350', desc: 'Green chili peppers stuffed with cheese and pork wrapped in lumpia wrapper.', img: 'https://images.yummy.ph/yummy/uploads/2016/09/1609_Dynamite-Cheese-Sticks-640-1.jpg' },
-    { category: 'mains', name: 'Nachos', price: '₱340', desc: 'Crispy tortilla chips topped with cheese, minced meat, and jalapeños.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4By-UP-6BQW4LSCmJyl87p6fwuM8AN7Hc7zu26sdgcLsVyu3hA5vcU_iG&s=10' },
-    { category: 'mains', name: 'Chicharon Bulaklak', price: '₱320', desc: 'Deep-fried ruffle fat served with spiced vinegar dip.', img: 'https://www.foxyfolksy.com/wp-content/uploads/2024/11/how-to-cook-chicharon-bulaklak.jpg' },
-    { category: 'mains', name: 'Tofu Sisig', price: '₱299', desc: 'Crispy tofu cubes tossed in creamy, spicy sisig dressing.', img: 'https://assets.unileversolutions.com/recipes-v2/110254.jpg' },
-    { category: 'mains', name: 'Chicken Tenders', price: '₱299', desc: 'Breaded chicken breast strips fried to a crispy finish.', img: 'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80' },
-    { category: 'mains', name: 'Calamares', price: '₱250', desc: 'Golden fried squid rings served with tartar sauce.', img: 'https://thefatbutcherph.com/cdn/shop/articles/Pia_Santiago_Squid_Rings_1_73d55a7c-1bcb-4418-aae9-5ca8ce40529b.jpg?v=1752892180' },
-    { category: 'mains', name: 'Fries', price: '₱220', desc: 'Classic crispy potato french fries.', img: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80' },
-    { category: 'mains', name: 'Onion Rings', price: '₱220', desc: 'Batter-dipped fried onion rings with dipping sauce.', img: 'https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=600&q=80' },
-    { category: 'mains', name: 'Ensaladang Labanos', price: '₱170', desc: 'Pickled radish salad with onions and vinegar dressing.', img: 'https://www.angsarap.net/wp-content/uploads/2017/07/Ensaladang-Labanos-with-Alamang.jpg' },
+    // Main Dishes
+    { category: 'main-dishes', name: 'Creamy Beef Mushroom', price: '₱399', desc: 'Tender beef slices simmered in rich mushroom cream sauce.', img: 'https://www.cookinwithmima.com/wp-content/uploads/2018/10/Creamy-Mushroom-Steak.jpg' },
+    { category: 'main-dishes', name: 'Beef Salpicao', price: '₱399', desc: 'Sautéed beef tenderloin cubes loaded with toasted garlic and butter.', img: 'https://yummykitchentv.com/wp-content/uploads/2022/06/beef-salpicao-recipe-02.jpg' },
+    { category: 'main-dishes', name: 'Gambas', price: '₱399', desc: 'Sizzling shrimp cooked in garlic, olive oil, and chili peppers.', img: 'https://www.allrecipes.com/thmb/_rjAOFACbhUhfhLwmMpYcPwu95o=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/266085-spanish-garlic-shrimp-DDMFS-beauty-4x3-e4e199450d704150b787a0eb59640add.jpg' },
+    { category: 'main-dishes', name: 'Butter Garlic Shrimp', price: '₱399', desc: 'Juicy shrimp tossed in savory garlic butter sauce.', img: 'https://www.foodfidelity.com/wp-content/uploads/2025/02/Garlic-Butter-Shrimp-low-pro-best-1.jpg' },
+    { category: 'main-dishes', name: 'Sizzling Bagnet', price: '₱399', desc: 'Crispy deep-fried pork belly served hot on a sizzling plate.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRww-n8jdh6gk-qr_ZiJDt6GRoT_NSQsQcjADSgQa9CvoD32564ssUR7usP&s=10' },
+    { category: 'main-dishes', name: 'Bagnet', price: '₱350', desc: 'Classic Ilocano crisp-fried pork belly.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBeMi1IotdGg3ODNRuzNOyoJ1epFnmQOaIMyUzumKoskW3gD2g5qOgh1_6&s=10' },
+    { category: 'main-dishes', name: 'Lechon Kawali', price: '₱350', desc: 'Golden crispy pork belly served with savory liver sauce.', img: 'https://www.seriouseats.com/thmb/orl1xkPajYxzsOZwkooPtdYvM-M=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20210508-lechon-kawali-melissa-hom-2-inchChunks-seriouseats-1d53c12cee234305b921362e2106bf29.jpg' },
+    { category: 'main-dishes', name: 'Pork Sisig', price: '₱350', desc: 'Sizzling minced pork, onions, and chili peppers topped with fresh egg.', img: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhm-m8a8Q3JRgaqSGOcHqI8RptUYPe16IXr-FQgcdWm7slPyn_vGKaC6QnQBWTM71ZC5snRFh8V26yg0C2mcVd_flCj30ebr1gB7L5Du0ihlottu-aptH4HjgBaPxIRe7Q7xYGnGP_dqiJe/s1600/Sizzling+Pork+Sisig+Recipe-5.jpg' },
+    { category: 'main-dishes', name: 'Tofu Sisig', price: '₱299', desc: 'Crispy tofu cubes tossed in creamy, spicy sisig dressing.', img: 'https://assets.unileversolutions.com/recipes-v2/110254.jpg' },
+    { category: 'main-dishes', name: 'Chicken Tenders', price: '₱299', desc: 'Breaded chicken breast strips fried to a crispy finish.', img: 'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80' },
+
+    // Pulutan
+    { category: 'pulutan', name: 'Buffalo Wings', price: '₱370', desc: 'Crispy chicken wings glazed in spicy, tangy buffalo sauce.', img: 'https://easychickenrecipes.com/wp-content/uploads/2023/08/featured-buffalo-wings-recipe.jpg' },
+    { category: 'pulutan', name: 'Dynamite', price: '₱350', desc: 'Green chili peppers stuffed with cheese and pork wrapped in lumpia wrapper.', img: 'https://images.yummy.ph/yummy/uploads/2016/09/1609_Dynamite-Cheese-Sticks-640-1.jpg' },
+    { category: 'pulutan', name: 'Nachos', price: '₱340', desc: 'Crispy tortilla chips topped with cheese, minced meat, and jalapeños.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4By-UP-6BQW4LSCmJyl87p6fwuM8AN7Hc7zu26sdgcLsVyu3hA5vcU_iG&s=10' },
+    { category: 'pulutan', name: 'Chicharon Bulaklak', price: '₱320', desc: 'Deep-fried ruffle fat served with spiced vinegar dip.', img: 'https://www.foxyfolksy.com/wp-content/uploads/2024/11/how-to-cook-chicharon-bulaklak.jpg' },
+    { category: 'pulutan', name: 'Calamares', price: '₱250', desc: 'Golden fried squid rings served with tartar sauce.', img: 'https://thefatbutcherph.com/cdn/shop/articles/Pia_Santiago_Squid_Rings_1_73d55a7c-1bcb-4418-aae9-5ca8ce40529b.jpg?v=1752892180' },
+    { category: 'pulutan', name: 'Fries', price: '₱220', desc: 'Classic crispy potato french fries.', img: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80' },
+    { category: 'pulutan', name: 'Onion Rings', price: '₱220', desc: 'Batter-dipped fried onion rings with dipping sauce.', img: 'https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=600&q=80' },
+    { category: 'pulutan', name: 'Ensaladang Labanos', price: '₱170', desc: 'Pickled radish salad with onions and vinegar dressing.', img: 'https://www.angsarap.net/wp-content/uploads/2017/07/Ensaladang-Labanos-with-Alamang.jpg' },
 
     // Soups & Pasta
     { category: 'soups-pasta', name: 'Sinigang na Hipon', price: '₱450', desc: 'Tamarind sour soup with fresh shrimp and garden vegetables.', img: 'https://i.ytimg.com/vi/Mh7wIz0KlFE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA0IHEjKMtkISxyUZkRJX9NHyGyhg' },
@@ -211,7 +213,11 @@ const menuItems = [
 ];
 
 // TOGGLE FULL MENU
-function toggleFullMenu(forceOpen = false) {
+function toggleFullMenu(forceOpen = false, evt) {
+    // Stop the link's native "#drinks" jump so it can't fight our smooth-scroll
+    // (this was the cause of the scroll landing too far down, past the filters).
+    if (evt) evt.preventDefault();
+
     const wrapper = document.getElementById('full-menu-section');
     const btn = document.getElementById('toggle-menu-btn');
 
@@ -219,7 +225,9 @@ function toggleFullMenu(forceOpen = false) {
         wrapper.classList.add('active');
         btn.innerText = "Hide Menu";
         renderMenuCards('all');
-        scrollToFullMenu();
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.filter-btn').classList.add('active');
+        requestAnimationFrame(scrollToFullMenu);
     } else {
         wrapper.classList.remove('active');
         btn.innerText = "See Full Menu";
